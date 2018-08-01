@@ -14,4 +14,4 @@ app.get('/', (request, response) => {
 app.set('view engine', '.hbs')
 app.set('views', path.join(__dirname, 'views'))
 app.use(express.static(__dirname + '/public/'));
-app.listen(80)
+app.listen(3000)

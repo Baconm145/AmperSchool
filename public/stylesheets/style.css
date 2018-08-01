@@ -1,12 +1,53 @@
- body {
+ @font-face {
+    font-family: 'proxima_nova_black';
+    src: url('fonts/proxima_nova_black-webfont.eot');
+    src: url('fonts/proxima_nova_black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/proxima_nova_black-webfont.woff2') format('woff2'),
+         url('fonts/proxima_nova_black-webfont.woff') format('woff'),
+         url('fonts/proxima_nova_black-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+ }
+
+
+
+
+ @font-face {
+    font-family: 'proxima_nova_bold';
+    src: url('fonts/proxima_nova_bold-webfont.eot');
+    src: url('fonts/proxima_nova_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/proxima_nova_bold-webfont.woff2') format('woff2'),
+         url('fonts/proxima_nova_bold-webfont.woff') format('woff'),
+         url('fonts/proxima_nova_bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+ }
+
+
+
+
+ @font-face {
+    font-family: 'proxima_nova_regular';
+    src: url('fonts/proximanova-regular-webfont.eot');
+    src: url('fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/proximanova-regular-webfont.woff2') format('woff2'),
+         url('fonts/proximanova-regular-webfont.woff') format('woff'),
+         url('fonts/proximanova-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+ }
+ * {
 	margin: 0;
 	padding: 0;
  }
- 
+
  #background 
 { 
 	 left: 0px; 
-	 top: 0px; 
+	 top: -105px; 
 	 position: relative; 
 	 margin-left: auto; 
 	 margin-right: auto; 
@@ -58,22 +99,30 @@
 
  #layer_5 
 { 
-	 left: 236px; 
-	 top: 343px; 
+	 left: 234px; 
+	 top: 332px; 
 	 position: absolute; 
 	 width: 525px;
 	 height: 87px;
 	 z-index:5;
+	 font-family: proxima_nova_bold; 
+	 font-size: 37pt;
+	 color: #3b4694;
+	 text-align: left;
 } 
 
  #layer_6 
 { 
-	 left: 236px; 
-	 top: 469px; 
+	 left: 235px; 
+	 top: 463px; 
 	 position: absolute; 
 	 width: 529px;
 	 height: 91px;
 	 z-index:6;
+	 font-family: proxima_nova_regular; 
+	 font-size: 21.5pt;
+	 color: #cb3832;
+	 text-align: left;
 } 
 
  #layer_7 
@@ -83,17 +132,7 @@
 	 position: absolute; 
 	 width: 163px;
 	 height: 41px;
-	 z-index:7;
-} 
-
- #layer_8 
-{ 
-	 left: 496px; 
-	 top: 41px; 
-	 position: absolute; 
-	 width: 286px;
-	 height: 26px;
-	 z-index:8;
+	 z-index:7;	 
 } 
 
  #layer_4_0 
@@ -318,8 +357,8 @@
 
  #LZ0A3477 
 { 
-	 left: 213px; 
-	 top: 3168px; 
+	 left: 0px; 
+	 top: 3358px; 
 	 position: absolute; 
 	 width: 1280px;
 	 height: 853px;
@@ -338,8 +377,8 @@
 
  #LZ0A36091 
 { 
-	 left: 567px; 
-	 top: 2917px; 
+	 left: 0px; 
+	 top: 3120px; 
 	 position: absolute; 
 	 width: 1280px;
 	 height: 853px;
@@ -368,8 +407,8 @@
 
  #LZ0A3599 
 { 
-	 left: 267px; 
-	 top: 2660px; 
+	 left: 0px; 
+	 top: 2880px; 
 	 position: absolute; 
 	 width: 1280px;
 	 height: 853px;
@@ -610,10 +649,14 @@
 { 
 	 left: 508px; 
 	 top: 4438px; 
-	 position: absolute; 
+	 position: absolute;
 	 width: 257px;
 	 height: 52px;
 	 z-index:60;
+	 font-family: proxima_nova_regular; 
+	 font-size: 18.5pt;
+	 color: #cb3832;
+	 text-align: center;
 } 
 
  #layer_61 
@@ -789,11 +832,15 @@
  #layer_2_5 
 { 
 	 left: 839px; 
-	 top: 4881px; 
+	 top: 4876px; 
 	 position: absolute; 
 	 width: 186px;
 	 height: 18px;
 	 z-index:78;
+	 font-family: proxima_nova_black; 
+	 font-size: 19.5pt;
+	 color: #ffffff;
+	 text-align: center;
 } 
 
  #layer_9000 
@@ -964,4 +1011,18 @@
 	 width: 8px;
 	 height: 159px;
 	 z-index:95;
+} 
+
+#layer_8 
+{ 
+	 left: 496px; 
+	 top: 125px; 
+	 position: absolute; 
+	 width: 286px;
+	 height: 26px;
+	 z-index:35;	 
+	 font-family: proxima_nova_regular; 
+	 font-size: 21.5pt;
+	 color: #3b4694;
+	 text-align: center;
 } 
