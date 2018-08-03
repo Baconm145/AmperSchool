@@ -1,0 +1,39 @@
+/*pictures*/
+/*figures*/
+#results_rectangle { 
+	left: 0px; 
+	top: 2320px; 
+	position: absolute; 
+	width: 1280px;
+	height: 440px;
+	z-index:1;
+	background: rgb(232, 232, 232);
+    box-shadow: 5px 5px 10px rgba(100,100,100,0.5);
+}
+
+/*content*/
+#results_header {
+	left: 340px; 
+	top: 2245px;
+	position: absolute; 
+	width: 596px;
+	height: 24px;
+	z-index:1;	
+	font-family: proxima_nova_black; 
+	font-size: 23pt;
+	text-align: center; 
+	color: #3b4694;
+}
+
+#results_bottom { 
+	left: 461px; 
+	top: 2808px; 
+	position: absolute; 
+	width: 352px;
+	height: 23px;
+	z-index:1;
+    font-family: proxima_nova_bold; 
+    font-size: 18.5pt;
+    color: #3b4694;
+    text-align: center;
+} 

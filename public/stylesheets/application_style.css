@@ -1,0 +1,133 @@
+/*picture*/
+#application_photo_1 { 
+	left: 0px; 
+	top: 2880px; 
+	position: absolute; 
+	z-index:1;
+} 
+
+#application_photo_2 { 
+	left: 0px; 
+	top: 3120px; 
+	position: absolute; 
+	z-index:1;
+} 
+
+
+#application_photo_3 { 
+	left: 0px; 
+	top: 3358px; 
+	position: absolute;
+	z-index:1;
+} 
+
+/*figures*/
+#application_rectangle { 
+	left: -5px; 
+	top: 2880px; 
+	position: absolute; 
+	width: 692px;
+	height: 718px;
+	z-index:2;
+	background: rgb(232, 232, 232);
+    box-shadow: 5px 5px 10px rgba(100,100,100,0.5);
+}
+
+
+
+#application_rectangle_rounded_1 { 
+	left: 196px; 
+	top: 3163px; 
+	position: absolute; 
+	width: 444px;
+	height: 50px;
+	z-index:3;
+	background: #ffffff;
+	border-radius: 10px;
+	font-family: proxima_nova_black; 
+	font-size: 19.5pt;
+	color: #3b4694;
+	text-align: center; 
+	box-sizing: border-box;
+	padding: 9px;
+
+} 
+
+ #application_rectangle_rounded_2 { 
+	left: 196px; 
+	top: 3238px; 
+	position: absolute; 
+	width: 444px;
+	height: 50px;
+	z-index:3;
+	background: #ffffff;
+	border-radius: 10px;
+	font-family: proxima_nova_black; 
+	font-size: 19.5pt;
+	color: #3b4694;
+	text-align: center; 
+	box-sizing: border-box;
+	padding: 9px;
+} 
+
+ #application_rectangle_rounded_3 { 
+	left: 196px; 
+	top: 3313px; 
+	position: absolute; 
+	width: 445px;
+	height: 50px;
+	z-index:3;
+	background: #ffffff;
+	border-radius: 10px;
+	font-family: proxima_nova_black; 
+	font-size: 19.5pt;
+	color: #3b4694;
+	text-align: center; 
+	box-sizing: border-box;
+	padding: 9px;
+} 
+
+#application_rectangle_rounded_4 { 
+	left: 305px; 
+	top: 3388px; 
+	position: absolute; 
+	width: 238px;
+	height: 50px;
+	z-index:3;
+	background: #3b4694;
+	border-radius: 10px;
+	font-family: proxima_nova_black; 
+	font-size: 19.5pt;
+	color: #ffffff;
+	text-align: center; 
+	box-sizing: border-box;
+	padding: 9px;
+}
+
+/*content*/
+#application_header { 
+	left: 265px; 
+	top: 3015px; 
+	position: absolute; 
+	width: 318px;
+	height: 67px;
+	z-index:3;
+	font-family: proxima_nova_black; 
+	font-size: 23pt;
+	text-align: center; 
+	color: #3b4694;
+} 
+
+#application_subheader { 
+	 left: 213px; 
+	 top: 3095px; 
+	 position: absolute; 
+	 width: 406px;
+	 height: 22px;
+	 z-index:3;
+	 font-family: proxima_nova_regular; 
+	 font-size: 16pt;
+	 text-align: center; 
+	 color: #cb3832;
+} 
+

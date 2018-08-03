@@ -1,0 +1,92 @@
+/*pictures*/
+#start_photo_1 { 
+	left: 0px; 
+	top: 30px; 
+	position: relative;
+	z-index: 1;
+	background-size: 100%;
+}
+
+#start_photo_2 { 
+	left: 802px; 
+	top: 185px; 
+	position: absolute; 
+	width: 382px;
+	height: 410px;
+	z-index:4;
+} 
+
+#start_logo {
+	left: 235px;
+	top: 120px;
+	position: absolute;
+	width: 163px;
+	height: 41px;
+	z-index: 1000;
+}
+
+#start_arrowdown { 
+	left: 641px; 
+	top: 710px; 
+	position: absolute; 
+	width: 41px;
+	height: 27px;
+	z-index:2;
+} 
+
+
+/*figures*/
+#start_enter { 
+	left: 926px; 
+	top: 120px; 
+	position: absolute; 
+	width: 109px;
+	height: 39px;
+	z-index:3;
+	background: #3b4694;
+	border-radius: 10px;
+	font-family: proxima_nova_regular; 
+	font-size: 19.5pt;
+	color: #ffffff;
+	text-align: center; 
+	box-sizing: border-box;
+	padding: 5px;
+} 
+
+/*content*/
+#start_name { 
+	left: 496px; 
+	top: 125px; 
+	position: absolute; 
+	width: 286px;
+	height: 26px;
+	z-index:35;	 
+	font-family: proxima_nova_regular; 
+	font-size: 21.5pt;
+	color: #3b4694;
+	text-align: center;
+} 
+#start_greeting { 
+	left: 234px; 
+	top: 332px; 
+	position: absolute; 
+	width: 525px;
+	height: 87px;
+	z-index:5;
+	font-family: proxima_nova_bold; 
+	font-size: 37pt;
+	color: #3b4694;
+	text-align: left;
+}
+#start_subgreeting { 
+	left: 235px; 
+	top: 463px; 
+	position: absolute; 
+	width: 529px;
+	height: 91px;
+	z-index:6;
+	font-family: proxima_nova_regular; 
+	font-size: 21.5pt;
+	color: #cb3832;
+	text-align: left;
+} 

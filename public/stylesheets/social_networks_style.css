@@ -1,0 +1,144 @@
+/*pictures*/
+#social_networks_macbook {
+	left: 280px; 
+	top: 3840px; 
+	position: absolute; 
+	width: 723px;
+	height: 384px;
+	z-index:1;
+}
+
+#social_networks_screenshot {
+	left: 399px; 
+	top: 3868px; 
+	position: absolute; 
+	width: 478px;
+	height: 257px;
+	z-index:2;
+}
+
+#social_networks_like_1 {
+	left: 286px;
+	top: 3807px;
+	position: absolute;
+	z-index:3;
+}
+
+#social_networks_like_2 {
+	left: 97px;
+	top: 4206px;
+	position: absolute;
+	z-index:3;
+}
+
+#social_networks_like_3 {
+	left: 960px;
+	top: 3976px;
+	position: absolute;
+	z-index:3;
+}
+
+#social_networks_like_4 {
+	left: 986px;
+	top: 3759px;
+	position: absolute;
+	z-index:3;
+}
+
+#social_networks_like_5 {
+	left: 142px;
+	top: 3928px;
+	position: absolute;
+	z-index:3;
+}
+
+#social_networks_like_6 {
+	left: 1004px;
+	top: 4000px;
+	position: absolute;
+	z-index:3;
+}
+
+#social_networks_like_7 {
+	left: 11px;
+	top: 3519px;
+	position: absolute;
+	z-index:3;
+}
+
+/*figures*/
+
+#social_networks_rectangle_blue { 
+	 left: 221px; 
+	 top: 4250px; 
+	 position: absolute; 
+	 width: 403px;
+	 height: 51px;
+	 z-index:1;
+	 background: #3b4694;
+}
+
+#social_networks_rectangle_white_left { 
+	left: 223px; 
+	top: 4252px; 
+	position: absolute; 
+	width: 399px;
+	height: 47px;
+	z-index:2;
+	background: #ffffff;
+    font-family: proxima_nova_bold; 
+    font-size: 28pt;
+    color: #3b4694;
+    text-align: center;
+}
+
+#social_networks_rectangle_red { 
+	left: 658px; 
+	top: 4250px;
+	position: absolute; 
+	width: 403px;
+	height: 51px;
+	z-index:1;
+	background: #cb3832;
+}
+
+#social_networks_rectangle_white_right { 
+	left: 660px; 
+	top: 4252px; 
+	position: absolute; 
+	width: 399px;
+	height: 47px;
+	z-index:2;
+	background: #ffffff;
+    font-family: proxima_nova_bold; 
+    font-size: 28pt;
+    color: #3b4694;
+    text-align: center;
+}
+
+/*content*/
+#social_networks_header { 
+	left: 390px; 
+	top: 3692px; 
+	position: absolute; 
+	width: 498px;
+	height: 29px;
+	z-index:1;
+    font-family: proxima_nova_black; 
+    font-size: 22pt;
+    color: #3b4694;
+    text-align: center;
+}
+
+#social_networks_subheader { 
+	left: 392px; 
+	top: 3736px; 
+	position: absolute; 
+	width: 488px;
+	height: 51px;
+	z-index:1;
+    font-family: proxima_nova_regular; 
+    font-size: 18.5pt;
+    color: #cb3832;
+    text-align: center;
+}

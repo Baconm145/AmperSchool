@@ -1,0 +1,139 @@
+@font-face {
+    font-family: 'proxima_nova_black';
+    src: url('fonts/proxima_nova_black-webfont.eot');
+    src: url('fonts/proxima_nova_black-webfont.eot?#iefix') format('embedded-opentype'),
+        url('fonts/proxima_nova_black-webfont.woff2') format('woff2'),
+        url('fonts/proxima_nova_black-webfont.woff') format('woff'),
+        url('fonts/proxima_nova_black-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima_nova_bold';
+    src: url('fonts/proxima_nova_bold-webfont.eot');
+    src: url('fonts/proxima_nova_bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('fonts/proxima_nova_bold-webfont.woff2') format('woff2'),
+        url('fonts/proxima_nova_bold-webfont.woff') format('woff'),
+        url('fonts/proxima_nova_bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima_nova_regular';
+    src: url('fonts/proximanova-regular-webfont.eot');
+    src: url('fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('fonts/proximanova-regular-webfont.woff2') format('woff2'),
+        url('fonts/proximanova-regular-webfont.woff') format('woff'),
+        url('fonts/proximanova-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.regular_blue {
+	font-family: proxima_nova_regular; 
+	font-size: 22pt;
+	color: #3b4694;
+	text-align: left;
+}
+
+.regular_gray {
+	font-family: proxima_nova_regular; 
+	font-size: 13pt;
+	color: #3c3c3c;
+	text-align: left;
+}
+
+.regular_red {
+	font-family: proxima_nova_regular; 
+	font-size: 16pt;
+	color: #cb3832;
+	text-align: left;
+}
+
+.regular_red_footer {
+	font-family: proxima_nova_regular; 
+	font-size: 19pt;
+	color: #cb3832;
+	text-align: left;
+}
+
+.regular_red_italic {
+	font-family: proxima_nova_regular;
+	font-style: italic;
+	font-size: 18.5pt;
+	color: #cb3832;
+	text-align: center;
+}
+
+.bold {
+	font-family: proxima_nova_bold; 
+}
+
+.black_red {
+	font-family: proxima_nova_black; 
+	color: #cb3832;
+	text-align: center;
+}
+#background { 
+	left: 0px; 
+	top: 0px; 
+	position: relative; 
+	margin-left: 0; 
+	margin-right: 0; 
+	width: 100%;
+	height: 5537px; 
+	overflow: hidden;
+	z-index:0;
+	} 
+
+#BH5B1503 
+{ 
+	 left: 281px; 
+	 top: 2371px; 
+	 position: absolute; 
+	 width: 291px;
+	 height: 438px;
+	 z-index:86;
+} 
+
+ #layer_2_6 
+{ 
+	 left: 1075px; 
+	 top: 2502px; 
+	 position: absolute; 
+	 width: 27px;
+	 height: 41px;
+	 z-index:87;
+} 
+
+ #layer_22_0 
+{ 
+	 left: 175px; 
+	 top: 2502px; 
+	 position: absolute; 
+	 width: 27px;
+	 height: 41px;
+	 z-index:88;
+} 
+
+ #layer_89 
+{ 
+	 left: 661px; 
+	 top: 2434px; 
+	 position: absolute; 
+	 width: 372px;
+	 height: 198px;
+	 z-index:89;
+} 
+
+ #layer_90 
+{ 
+	 left: 325px; 
+	 top: 2686px; 
+	 position: absolute; 
+	 width: 183px;
+	 height: 22px;
+	 z-index:90;
+}

@@ -1,0 +1,52 @@
+/*pictures*/
+/*figures*/
+#footer_rectangle { 
+	left: 636px; 
+	top: 5314px; 
+	position: absolute; 
+	width: 6px;
+	height: 157px;
+	z-index:1;
+	background: #cb3832;
+}
+
+/*content*/
+#footer_header { 
+	left: 549px; 
+	top: 5202px; 
+	position: absolute; 
+	width: 178px;
+	height: 63px;
+	z-index:1;
+	font-family: proxima_nova_black;
+    line-height: 75%;
+	font-size: 24pt;
+	color: #3b4694;
+	text-align: center;
+} 
+
+#footer_address_1 { 
+	left: 249px; 
+	top: 5334px; 
+	position: absolute; 
+	width: 326px;
+	height: 96px;
+	z-index:1; 
+	font-family: proxima_nova_black; 
+	font-size: 22pt;
+	color: #3b4694;
+	text-align: left;
+} 
+
+ #footer_address_2 { 
+	left: 700px; 
+	top: 5334px; 
+	position: absolute; 
+	width: 325px;
+	height: 96px;
+	z-index:1;
+	font-family: proxima_nova_black; 
+	font-size: 22pt;
+	color: #3b4694;
+	text-align: left;
+}

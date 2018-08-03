@@ -1,0 +1,210 @@
+/*pictures*/
+#specs_photo_1 { 
+	left: 0px; 
+	top: 748px; 
+	position: absolute; 
+	width: 1280px;
+	height: 401px;
+	z-index:1;
+}
+
+#specs_photo_2 { 
+	left: -66px; 
+	top: 1149px; 
+	position: absolute; 
+	width: 243px;
+	height: 242px;
+	z-index:2;
+}
+
+#specs_photo_3 { 
+	left: 704px; 
+	top: 996px; 
+	position: absolute; 
+	width: 576px;
+	height: 471px;
+	z-index:2;
+}
+
+#specs_photo_4 { 
+	left: 0px; 
+	top: 1628px; 
+	position: absolute; 
+	width: 377px;
+	height: 561px;
+	z-index:12;
+}
+
+#specs_photo_5 { 
+	left: 1041px; 
+	top: 1682px; 
+	position: absolute; 
+	width: 239px;
+	height: 457px;
+	z-index:15;
+}
+
+#specs_line_1 { 
+	left: 375px; 
+	top: 1396px; 
+	position: absolute; 
+	width: 218px;
+	height: 151px;
+	z-index:2;
+} 
+
+#specs_line_2
+{ 
+	 left: 674px; 
+	 top: 1572px; 
+	 position: absolute; 
+	 width: 160px;
+	 height: 167px;
+	 z-index:2;
+}
+
+#specs_line_3 { 
+	left: 390px; 
+	top: 1799px; 
+	position: absolute; 
+	width: 74px;
+	height: 199px;
+	z-index:2;
+} 
+
+/*figures*/
+
+
+#specs_rectangle_1 { 
+	left: 294px; 
+	top: 807px; 
+	position: absolute; 
+	width: 692px;
+	height: 47px;
+	z-index:2;
+	background: #ffffff;
+} 
+
+ #specs_rectangle_2 { 
+	left: 418px; 
+	top: 852px; 
+	position: absolute; 
+	width: 440px;
+	height: 47px;
+	z-index:2;
+	background: #ffffff;
+} 
+
+ #specs_rectangle_3 { 
+	left: 361px; 
+	top: 892px; 
+	position: absolute; 
+	width: 553px;
+	height: 47px;
+	z-index:2;
+	background: #ffffff;
+} 
+
+#specs_rectangle_4 { 
+	left: 463px; 
+	top: 937px; 
+	position: absolute; 
+	width: 350px;
+	height: 47px;
+	z-index:2;
+	background: #ffffff;
+} 
+
+
+
+/*content*/
+#specs_header { 
+	 left: 307px; 
+	 top: 812px; 
+	 position: absolute; 
+	 width: 662px;
+	 height: 152px;
+	 z-index:3;	
+	 font-family: proxima_nova_black; 
+	 font-size: 26pt;
+	 text-align: center; 
+	 color: #3b4694;
+} 
+
+#specs_subheader { 
+	left: 205px; 
+	top: 1158px; 
+	position: absolute; 
+	width: 427px;
+	height: 24px;
+	z-index:3;
+	font-family: proxima_nova_black; 
+	font-size: 26pt;
+	text-align: center; 
+	color: #3b4694;
+}
+
+#specs_article_1 { 
+	left: 207px; 
+	top: 1240px; 
+	position: absolute; 
+	width: 512px;
+	height: 143px;
+	z-index:3;
+	font-family: proxima_nova_regular; 
+	font-size: 18pt;
+	text-align: left; 
+	color: #3b4694;
+} 
+
+#specs_article_2 { 
+	left: 612px; 
+	top: 1470px; 
+	position: absolute; 
+	width: 454px;
+	height: 82px;
+	z-index:3;
+	font-family: proxima_nova_regular; 
+	font-size: 18pt;
+	text-align: right; 
+	color: #3b4694;
+} 
+
+#specs_article_3 { 
+	left: 206px; 
+	top: 1604px; 
+	position: absolute; 
+	width: 431px;
+	height: 82px;
+	z-index:3;
+	font-family: proxima_nova_regular; 
+	font-size: 18pt;
+	text-align: left; 
+	color: #3b4694;
+}
+
+#specs_article_4 { 
+	left: 447px; 
+	top: 1752px; 
+	position: absolute; 
+	width: 625px;
+	height: 142px;
+	z-index:3;
+	font-family: proxima_nova_regular; 
+	font-size: 18pt;
+	text-align: left; 
+	color: #3b4694;
+}
+
+#specs_article_5 { 
+	left: 322px; 
+	top: 2004px; 
+	position: absolute; 
+	width: 635px;
+	height: 96px;
+	z-index:3;
+	font-family: proxima_nova_regular; 
+	font-size: 18pt;
+	text-align: left; 
+	color: #3b4694;
+}
