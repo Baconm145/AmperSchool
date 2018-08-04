@@ -2,7 +2,6 @@ const path = require('path')
 const express = require('express')
 const exphbs = require('express-handlebars')
 const app = express()
-var $ = require('jQuery')
 app.engine('.hbs', exphbs({
     defaultLayout: 'main',
     extname: '.hbs',
