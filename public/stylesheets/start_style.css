@@ -2,9 +2,8 @@
 #start_photo_1 { 
 	left: 0px; 
 	top: 30px; 
-	position: relative;
+	position: absolute; 
 	z-index: 1;
-	background-size: 100%;
 }
 
 #start_photo_2 { 

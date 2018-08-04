@@ -31,6 +31,14 @@
     font-style: normal;
 }
 
+@viewport {
+	width: device-width;
+	zoom: 1.5;
+	min-zoom: 1.5;
+	max-zoom: 3;
+	user-zoom: fixed;
+  }
+
 .regular_blue {
 	font-family: proxima_nova_regular; 
 	font-size: 22pt;
@@ -75,6 +83,13 @@
 	font-family: proxima_nova_black; 
 	color: #cb3832;
 	text-align: center;
+}
+body {
+background-color:#fff;
+padding:0;
+margin:0px auto auto auto;
+color:#424849;
+zoom: 1.5;
 }
 #background { 
 	left: 0px; 
