@@ -85,23 +85,23 @@
 	text-align: center;
 }
 body {
-background-color:#fff;
-padding:0;
-margin:0px auto auto auto;
-color:#424849;
-zoom: 1.5;
+	margin: 0;
+	padding: 0;
 }
+
 #background { 
 	left: 0px; 
-	top: 0px; 
-	position: relative; 
-	margin-left: 0; 
+	top: -40px; 
+	position: relative;
+	margin: 0;
+	margin-left: 0;
+	padding: 0; 
 	margin-right: 0; 
 	width: 100%;
 	height: 5537px; 
 	overflow: hidden;
 	z-index:0;
-	} 
+} 
 
 #BH5B1503 
 { 
