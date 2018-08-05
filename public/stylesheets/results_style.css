@@ -36,4 +36,107 @@
     font-size: 18.5pt;
     color: #3b4694;
     text-align: center;
+}
+/*results swiping box*/
+#results_box {
+	left: 281px; 
+	top: 2371px;
+	position: relative;
+	width: 760px;
+	height: 360px;
+	z-index: 3;
+}
+
+#results_student_photo { 
+	left: 0px; 
+	top: 0px; 
+	position: absolute; 
+	width: 260px;
+	height: 260px;
+	z-index:2;
 } 
+
+#results_content { 
+	left: 380px; 
+	top: 0px; 
+	position: absolute; 
+	width: 372px;
+	height: 198px;
+	z-index:2;	
+	font-family: proxima_nova_regular; 
+	font-size: 18pt;
+	text-align: left; 
+	color: #3b4694;
+} 
+
+#results_student_name { 
+	left: 0; 
+	top: 310px; 
+	position: absolute; 
+	width: 260px;
+	height: 22px;
+	z-index:2;	
+	font-family: proxima_nova_regular; 
+	font-size: 20pt;
+	text-align: center; 
+	color: #3b4694;
+}
+
+#results_swiper_left {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	width: 280px;
+	height: 440px;
+	z-index: 5;
+}
+
+#results_swiper_right {
+	left: 1000px;
+	top: 0px;
+	position: absolute;
+	width: 280px;
+	height: 440px;
+	z-index: 5;
+}
+
+#results_arrow_left {
+	left: 175px;
+	top: 200px;
+	position: absolute;
+	width: 27px;
+	height: 41px;
+	z-index: 2;
+}
+
+#results_arrow_right {
+	left: 78px;
+	top: 200px;
+	position: absolute;
+	width: 27px;
+	height: 41px;
+	z-index: 2;
+}
+
+
+
+ #layer_2_6 
+{ 
+	 left: 1075px; 
+	 top: 2502px; 
+	 position: absolute; 
+	 width: 27px;
+	 height: 41px;
+	 z-index:87;
+} 
+
+ #layer_22_0 
+{ 
+	 left: 175px; 
+	 top: 2502px; 
+	 position: absolute; 
+	 width: 27px;
+	 height: 41px;
+	 z-index:88;
+} 
+

@@ -1,9 +1,9 @@
 {
-  "name": "myapp",
+  "name": "AmperSchool",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node index.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",

@@ -96,59 +96,8 @@ body {
 	margin: 0;
 	margin-left: 0;
 	padding: 0; 
-	margin-right: 0; 
-	width: 100%;
+	margin-right: 0;
 	height: 5537px; 
 	overflow: hidden;
 	z-index:0;
 } 
-
-#BH5B1503 
-{ 
-	 left: 281px; 
-	 top: 2371px; 
-	 position: absolute; 
-	 width: 291px;
-	 height: 438px;
-	 z-index:86;
-} 
-
- #layer_2_6 
-{ 
-	 left: 1075px; 
-	 top: 2502px; 
-	 position: absolute; 
-	 width: 27px;
-	 height: 41px;
-	 z-index:87;
-} 
-
- #layer_22_0 
-{ 
-	 left: 175px; 
-	 top: 2502px; 
-	 position: absolute; 
-	 width: 27px;
-	 height: 41px;
-	 z-index:88;
-} 
-
- #layer_89 
-{ 
-	 left: 661px; 
-	 top: 2434px; 
-	 position: absolute; 
-	 width: 372px;
-	 height: 198px;
-	 z-index:89;
-} 
-
- #layer_90 
-{ 
-	 left: 325px; 
-	 top: 2686px; 
-	 position: absolute; 
-	 width: 183px;
-	 height: 22px;
-	 z-index:90;
-}

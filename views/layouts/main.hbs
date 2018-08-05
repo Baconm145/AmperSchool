@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="viewport" content="text/html, charset=UTF-8, width=device-width, initial-scale=1.5, minimum-scale=1.5, user-scalable=no" />
+		<meta name="viewport" content="text/html, charset=UTF-8" />
 		<title>AmperSchool</title>
 		<script src="javascripts/jquery.min.js"></script>
+		<script src="javascripts/swiper.js"></script>
 		<script src="javascripts/resize.js"></script>
 		<link href="stylesheets/general_style.css" rel="stylesheet" type="text/css">
 		<link href="stylesheets/start_style.css" rel="stylesheet" type="text/css">
@@ -16,11 +17,6 @@
 	</head>
 	<body>
 		<div id="background">
-			<div id="BH5B1503"><img src="images/BH5B1503.png"></div>
-			<div id="layer_2_6"><img src="images/layer_2_6.png"></div>
-			<div id="layer_22_0"><img src="images/layer_22_0.png"></div>
-			<div id="layer_89"><img src="images/layer_89.png"></div>
-			<div id="layer_90"><img src="images/layer_90.png"></div>
 			<!--Start graphics-->
 
 			<div id="start_photo_1"><img src="images/photo_9.png"></div>
@@ -92,7 +88,23 @@
 				
 			<!--Results graphics-->
 
-				<div id="results_rectangle"></div>
+				<div id="results_rectangle">					
+					<div id="results_swiper_left">
+						<div id="results_arrow_left"><img src="images/arrowleft.png"></div>
+					</div>
+					<div id="results_swiper_right">
+						<div id="results_arrow_right"><img src="images/arrowright.png"></div>
+					</div>
+				</div>
+				<div id="results_box">
+					<div id="results_student_photo"><img src="images/photo_10.png"></div>
+					<div id="results_content">Результаты<br>
+						Результаты бла-бла-бла Результаты бла-бла-бла Результаты бла-бла-бла
+						Результаты бла-бла-бла Результаты бла-бла-бла Результаты бла-бла-бла
+						Результаты бла-бла-бла 
+					</div>
+					<div id="results_student_name">Миша Верёвкин</div>
+				</div>
 
 			<!--Results content-->
 			
