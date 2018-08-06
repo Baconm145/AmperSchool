@@ -17,11 +17,11 @@
 
 #start_logo {
 	left: 235px;
-	top: 120px;
-	position: absolute;
+	top: 10px;
+	position: fixed;
 	width: 163px;
 	height: 41px;
-	z-index: 1000;
+	z-index: 7;
 }
 
 #start_arrowdown { 
@@ -35,13 +35,24 @@
 
 
 /*figures*/
+#start_topbox {
+	left: 0px;
+	top: 0px;
+	position: fixed;
+	width: 1280px;
+	height: 60px;
+	z-index: 15;	
+	background: rgb(232, 232, 232);
+    box-shadow: 5px 5px 10px rgba(100,100,100,0.5);
+}
+
 #start_enter { 
 	left: 926px; 
-	top: 120px; 
-	position: absolute; 
+	top: 10px;
+	position: fixed;
 	width: 109px;
 	height: 39px;
-	z-index:3;
+	z-index:7;
 	background: #3b4694;
 	border-radius: 10px;
 	font-family: proxima_nova_regular; 
@@ -50,16 +61,16 @@
 	text-align: center; 
 	box-sizing: border-box;
 	padding: 5px;
-} 
+}
 
 /*content*/
 #start_name { 
 	left: 496px; 
-	top: 125px; 
-	position: absolute; 
+	top: 10px; 
+	position: fixed; 
 	width: 286px;
 	height: 26px;
-	z-index:35;	 
+	z-index:7;	 
 	font-family: proxima_nova_regular; 
 	font-size: 21.5pt;
 	color: #3b4694;

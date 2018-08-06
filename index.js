@@ -9,6 +9,7 @@ app.engine('.hbs', exphbs({
 }))
 app.get('/', (request, response) => {
   response.render('home', {
+    layout: false
   })
 })
 app.set('view engine', '.hbs')
