@@ -1,0 +1,225 @@
+@font-face {
+    font-family: 'proxima_nova_black';
+    src: url('fonts/proxima_nova_black-webfont.eot');
+    src: url('fonts/proxima_nova_black-webfont.eot?#iefix') format('embedded-opentype'),
+        url('fonts/proxima_nova_black-webfont.woff2') format('woff2'),
+        url('fonts/proxima_nova_black-webfont.woff') format('woff'),
+        url('fonts/proxima_nova_black-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima_nova_bold';
+    src: url('fonts/proxima_nova_bold-webfont.eot');
+    src: url('fonts/proxima_nova_bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('fonts/proxima_nova_bold-webfont.woff2') format('woff2'),
+        url('fonts/proxima_nova_bold-webfont.woff') format('woff'),
+        url('fonts/proxima_nova_bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima_nova_regular';
+    src: url('fonts/proximanova-regular-webfont.eot');
+    src: url('fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('fonts/proximanova-regular-webfont.woff2') format('woff2'),
+        url('fonts/proximanova-regular-webfont.woff') format('woff'),
+        url('fonts/proximanova-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@viewport {
+	width: device-width;
+	zoom: 1.5;
+	min-zoom: 1.5;
+	max-zoom: 3;
+	user-zoom: fixed;
+  }
+
+.regular_blue {
+	font-family: proxima_nova_regular; 
+	font-size: 22pt;
+	color: #3b4694;
+	text-align: left;
+}
+
+.regular_gray {
+	font-family: proxima_nova_regular; 
+	font-size: 13pt;
+	color: #3c3c3c;
+	text-align: left;
+}
+
+.regular_red {
+	font-family: proxima_nova_regular; 
+	font-size: 16pt;
+	color: #cb3832;
+	text-align: left;
+}
+
+.regular_red_footer {
+	font-family: proxima_nova_regular; 
+	font-size: 19pt;
+	color: #cb3832;
+	text-align: left;
+}
+
+.regular_red_italic {
+	font-family: proxima_nova_regular;
+	font-style: italic;
+	font-size: 18.5pt;
+	color: #cb3832;
+	text-align: center;
+}
+
+.bold {
+	font-family: proxima_nova_bold; 
+}
+
+.black_red {
+	font-family: proxima_nova_black; 
+	color: #cb3832;
+	text-align: center;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+#background { 
+	left: 0px;
+	top: 0px;
+	position: relative;
+	margin: 0;
+	margin-left: 0;
+	padding: 0; 
+	margin-right: 0;
+	height: 100%; 
+	overflow: hidden;
+	z-index:0;
+}
+
+#profile_background { 
+	left: 0px; 
+	top: 60px; 
+	position: fixed; 
+	z-index: 1;
+}
+
+#profile_general {
+	left: 0px;
+	top: 190px;
+	height: 240px;
+	width: 420px;
+	position: absolute;
+	z-index: 6;
+}
+
+#profile_timetable {
+	left: 425px;
+	top: 190px;
+	height: 240px;
+	width: 820px;
+	position: absolute;
+	z-index: 6;
+}
+	#profile_timetable_subtitle {
+		left: 120px;
+		top: 10px;
+		position: absolute;
+		height: 40px;
+		width: 150px;
+		z-index: 6;
+		font-family: proxima_nova_bold; 
+		font-size: 22.5pt;
+		color: #3b4694;
+		text-align: left; 		
+	}
+	#profile_timetable_content {
+		left: 300px;
+		top: 10px;
+		position: absolute;
+		height: 240px;
+		width: 150px;
+		z-index: 6;
+		font-family: proxima_nova_regular; 
+		font-size: 22.5pt;
+		color: #3b4694;
+		text-align: left; 		
+	}
+
+#profile_timetable_title {
+	left: 0px;
+	top: 0px;
+	height: 60px;
+	width: 420px;
+	position: absolute;
+	z-index: 6;
+	font-family: proxima_nova_regular; 
+	font-size: 22.5pt;
+	color: #3b4694;
+	text-align: left; 
+	box-sizing: border-box;
+	padding: 10px;
+	padding-left: 70px;
+	cursor: pointer;  
+}
+#profile_performance_title {
+	left: 0px;
+	top: 60px;
+	height: 60px;
+	width: 420px;
+	position:absolute;
+	z-index: 3;
+	font-family: proxima_nova_regular; 
+	font-size: 22.5pt;
+	color: #3b4694;
+	text-align: left; 
+	box-sizing: border-box;
+	padding: 10px;
+	padding-left: 70px;
+	cursor: pointer;  
+}
+#profile_homework_title {
+	left: 0px;
+	top: 120px;
+	height: 60px;
+	width: 420px;
+	position:absolute;
+	z-index: 3;
+	font-family: proxima_nova_regular; 
+	font-size: 22.5pt;
+	color: #3b4694;
+	text-align: left; 
+	box-sizing: border-box;
+	padding: 10px;
+	padding-left: 70px;
+	cursor: pointer;  
+}
+#profile_finances_title {
+	left: 0px;
+	top: 180px;
+	height: 60px;
+	width: 420px;
+	position:absolute;
+	z-index: 3;
+	font-family: proxima_nova_regular; 
+	font-size: 22.5pt;
+	color: #3b4694;
+	text-align: left; 
+	box-sizing: border-box;
+	padding: 10px;
+	padding-left: 70px;
+	cursor: pointer;  
+}
+#profile_divider_1 {
+	left: 420px;
+	top: 180px;
+	position: fixed;
+	height: 380px;
+	width: 5px;
+	z-index: 2;
+	background-color: #3b4694;
+}
