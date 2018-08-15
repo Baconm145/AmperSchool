@@ -9,8 +9,6 @@ const RedisStore = require('connect-redis')(session)
 const config = require('../config')
 const app = express()
 require('./auth').init(app)
- 
-app.use(favicon(__dirname + '/public/images/favicon.png'));
 
 app.engine('.hbs', exphbs({
     defaultLayout: 'main',
@@ -39,6 +37,9 @@ app.set('view engine', '.hbs')
 app.set('views', path.join(__dirname, 'views'))
 app.use(express.static(__dirname + '/public/'));
 app.use('/favicon.ico', express.static('public/images/favicon.ico'));
+
+
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 require('./user').init(app)
 
