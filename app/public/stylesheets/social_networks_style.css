@@ -80,6 +80,7 @@
     color: #3b4694;
 	text-align: center; 
 	border: solid 2px #3b4694;
+	cursor: pointer;
 }
 
 #social_networks_rectangle_white_right { 
@@ -95,6 +96,7 @@
     color: #3b4694;
 	text-align: center;	
 	border: solid 2px #cb3832;
+	cursor: pointer;
 }
 
 /*content*/

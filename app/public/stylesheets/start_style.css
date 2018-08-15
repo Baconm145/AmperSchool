@@ -56,11 +56,11 @@
 	background: #3b4694;
 	border-radius: 10px;
 	font-family: proxima_nova_regular; 
-	font-size: 19.5pt;
+	font-size: 15.5pt;
 	color: #ffffff;
 	text-align: center; 
 	box-sizing: border-box;
-	padding: 5px;
+	padding: 8px;
 	-webkit-touch-callout: none;
   	-webkit-user-select: none;
   	-khtml-user-select: none;
@@ -142,11 +142,11 @@
 		border-radius: 10px;
 		background: #3b4694;
 		font-family: proxima_nova_regular; 
-		font-size: 19.5pt;
+		font-size: 15.5pt;
 		color: #ffffff;
 		text-align: center; 
 		box-sizing: border-box;
-		padding: 3px;
+		padding: 5px;
 		border: none;
 		cursor: pointer;
 		-webkit-touch-callout: none;
@@ -163,7 +163,7 @@
 	}
 
 	#authorized {
-		left: 980px; 
+		left: 880px; 
 		top: 10px;
 	}
 	#authorized_button {
@@ -179,6 +179,11 @@
 		left: 1099px; 
 		top: 10px;
 	}
+	#private {
+		width: 260px;
+		left: 1000px; 
+		top: 10px;
+	}	
 	#loader {
 		left: 18px;
 		top: 90px;

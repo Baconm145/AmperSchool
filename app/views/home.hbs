@@ -18,6 +18,7 @@
 		<link href="stylesheets/social_networks_style.css" rel="stylesheet" type="text/css">
 		<link href="stylesheets/pricelist_style.css" rel="stylesheet" type="text/css">
 		<link href="stylesheets/footer_style.css" rel="stylesheet" type="text/css">
+		<link rel="shortcut_icon" href="images/favicon.ico" type="image/x-icon">
 	</head>
 	<body>
 		<div id="background">
@@ -29,6 +30,9 @@
 				{{#if unauthorized}}
 				{{#if fail}}
 					<div id="start_fail">Неверный логин или пароль</div>
+				{{/if}}
+				{{#if success}}
+					<div id="start_fail">Ваша заявка принята!</div>
 				{{/if}}
 				<div id="start_enter">ВОЙТИ</div>
 				<div id="start_auth_window">
@@ -44,12 +48,11 @@
 					</form>
 				</div>
 				{{else}}
-					<div id="start_user">{{name}}</div>
 					<form action="/logout" method="post">
 						<input type="submit" ID="authorized" value="ВЫЙТИ">
 					</form>
 					<form action="/profile" method="get">
-						<input type="submit" ID="main" value="ЛИЧ. КАБ.">
+						<input type="submit" ID="private" value="ЛИЧНЫЙ КАБИНЕТ">
 					</form>
 				{{/if}}
 
@@ -141,7 +144,7 @@
 				<div id="results_bottom">Хочу так же!
 					<span class="regular_red_italic">Оставить заявку!</span>
 				</div>
-				<div id="results_header">РЕЗУЛЬТАТЫ НАШИХ УЧЕНИКОВ</div>
+				<div id="results_header">ЛУЧШИЕ РЕЗУЛЬТАТЫ</div>
 
 			<!--Application graphics-->
 
@@ -149,10 +152,13 @@
 				<div id="application_photo_1"><img src="images/photo_1.png"></div>
 				<div id="application_photo_2"><img src="images/photo_2.png"></div>
 				<div id="application_photo_3"><img src="images/photo_3.png"></div>
-				<div id="application_rectangle_rounded_1">ИМЯ</div>			
-				<div id="application_rectangle_rounded_2">ФАМИЛИЯ</div>
-				<div id="application_rectangle_rounded_3">ТЕЛЕФОН</div>
-				<div id="application_rectangle_rounded_4">ЗАПИСАТЬСЯ</div>
+				<form action="/mail" method="post">
+					<input type="text" id="application_rectangle_rounded_1" name="name" placeholder="Ф.И.О."></input>
+					<input type="text" id="application_rectangle_rounded_2" name="phone" placeholder="ТЕЛЕФОН"></input>
+					<input type="text" id="application_rectangle_rounded_3" name="class" placeholder="КЛАСС"></input>
+					<input type="submit" id="application_rectangle_rounded_4" value="ОТПРАВИТЬ"></input>
+				</form>
+				
 
 			<!--Application content-->
 
@@ -241,13 +247,13 @@
 			</div>
 			<div id="footer_address_1">
 				Санкт-Петербург:<br>
-				<span class="regular_blue">Сенюкова 15, 3 этаж</span> <br>
-				тел. +7-904-108-16-25
+				<span class="regular_blue">Белоостровская 17</span> <br>
+				тел. +7 (981) 949-08-39
 			</div>
 			<div id="footer_address_2">
 				Ухта:<br>
 				<span class="regular_blue">Сенюкова 15, 3 этаж</span> <br>
-				тел. +7-904-108-16-25
+				тел. +7 (904) 108-16-25
 			</div>
 		</div>
  </body>

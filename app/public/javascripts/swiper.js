@@ -64,4 +64,19 @@ jQuery( function($) {
             });
         };
     });
+    $("#social_networks_rectangle_white_left").click(function() {
+        window.location = "https://vk.com/amper11";
+    });
+    $("#social_networks_rectangle_white_right").click(function() {
+        window.location = "https://www.instagram.com/amper_school/";
+    });
+    $("#pricelist_rectangle_rounded_1").click(function() {
+        $("#application_rectangle_rounded_1").get(0).scrollIntoView( { behavior: 'smooth' } );
+    });
+    $("#pricelist_rectangle_rounded_2").click(function() {
+        $("#application_rectangle_rounded_1").get(0).scrollIntoView( { behavior: 'smooth' } );
+    });
+    $("#pricelist_rectangle_rounded_3").click(function() {
+        $("#application_rectangle_rounded_1").get(0).scrollIntoView( { behavior: 'smooth' } );
+    });
 });

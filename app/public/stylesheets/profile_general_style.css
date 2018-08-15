@@ -285,6 +285,10 @@ body {
 	padding-left: 70px;
 	cursor: pointer;  
 }
+#authorized_profile {
+	left: 980px; 
+	top: 10px;
+}
 #profile_homework_title {
 	left: 0px;
 	top: 120px;

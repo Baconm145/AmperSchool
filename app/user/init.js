@@ -1,6 +1,7 @@
 const passport = require('passport')
 const database = require( '../database' )
 var bodyParser = require( 'body-parser' )
+var nodemailer = require('nodemailer');
 
 var jsonParser = bodyParser.json();
 
@@ -34,6 +35,10 @@ function initUser (app) {
       } )
     } )
   } )
+
+  app.use(bodyParser.urlencoded({
+    extended: true
+  }));
 
   app.post('/showDates', jsonParser, function(req, res) {
 
@@ -83,6 +88,41 @@ function initUser (app) {
     req.logout()
     res.redirect('/')      
   } )
+
+  app.post('/mail', function( req, res ) {
+
+    var transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'amperSchool@gmail.com',
+        pass: 'dd499c3ce7'
+      }
+    })
+
+    var string = ''
+    string += 'Поступила новая заявка!\nФ.И.О: ' + req.body.name + '\nТелефон: ' + req.body.phone + '\nКласс ' + req.body.class
+
+    var mailOptions = {
+      from: 'amperSchool@gmail.com',
+      to: 'amper.fiz@yandex.ru',
+      subject: 'Новая заявка!',
+      text: string
+    }
+
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+        res.render( 'home', {
+          layout: false,
+          unauthorized: true,
+          success: true
+        })
+        console.log('Email sent: ' + info.response);
+      }
+    })
+
+  })
 }
   
 function renderMainAuthorized( req, res ) {
