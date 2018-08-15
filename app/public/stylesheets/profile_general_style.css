@@ -117,7 +117,7 @@ body {
 	z-index: 6;
 }
 
-#profile_timetable {
+#profile_content {
 	left: 425px;
 	top: 190px;
 	height: 240px;
@@ -125,6 +125,7 @@ body {
 	position: absolute;
 	z-index: 6;
 }
+
 	#profile_timetable_subtitle {
 		left: 120px;
 		top: 10px;
@@ -135,14 +136,16 @@ body {
 		font-family: proxima_nova_bold; 
 		font-size: 22.5pt;
 		color: #3b4694;
-		text-align: left; 		
+		display: none;
+		text-align: left;		
 	}
 	#profile_timetable_content {
-		left: 300px;
+		left: 330px;
 		top: 10px;
 		position: absolute;
+		display: none;
 		height: 240px;
-		width: 150px;
+		width: 250px;
 		z-index: 6;
 		font-family: proxima_nova_regular; 
 		font-size: 22.5pt;
@@ -150,6 +153,105 @@ body {
 		text-align: left; 		
 	}
 
+#profile_performance_months {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	width: 200px;
+	height: 240px;
+	overflow-y: scroll;
+	display: none;
+	overflow-x: hidden;
+}
+
+	#profile_performance_month {
+		left: 0px;
+		top: 1px;
+		width: 230px;
+		position: relative;
+		height: 60px;
+		font-family: proxima_nova_regular; 
+		font-size: 22.5pt;
+		color: #3b4694;
+		box-sizing: border-box;
+		padding: 10px;
+		padding-left: 30px;
+		text-align: left;
+		cursor: pointer;
+	}
+	
+	#profile_divider_2 {
+		left: 625px;
+		top: 180px;
+		position: fixed;
+		height: 380px;
+		width: 6px;
+		z-index: 2;
+		display: none;
+		background-color: #3b4694;
+	}
+
+#profile_months_content {
+	left: 206px;
+	top: 0px;
+	position: absolute;
+	width: 500px;
+	height: 240px;
+	overflow-x: hidden;
+}
+
+#profile_performance_dates {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	width: 140px;
+	height: 240px;
+	overflow-y: scroll;
+	display: none;
+	overflow-x: hidden;
+}
+	#profile_performance_date {
+		left: 0px;
+		top: 1px;
+		width: 140px;
+		position: relative;
+		height: 60px;
+		font-family: proxima_nova_regular; 
+		font-size: 22.5pt;
+		color: #3b4694;
+		box-sizing: border-box;
+		padding: 10px;
+		padding-left: 30px;
+		text-align: left;
+		cursor: pointer;
+	}
+
+	#profile_divider_3 {
+		left: 770px;
+		top: 180px;
+		position: fixed;
+		height: 380px;
+		width: 6px;
+		z-index: 2;
+		display: none;
+		background-color: #3b4694;
+	}
+
+#profile_performance_marks {
+	left: 152px;
+	top: 0px;
+	position: absolute;
+	width: 440px;
+	height: 240px;
+	font-family: proxima_nova_regular; 
+	font-size: 22.5pt;
+	line-height: 1.5;
+	color: #3b4694;
+	box-sizing: border-box;
+	padding: 10px;
+	padding-left: 30px;
+	text-align: left;
+}
 #profile_timetable_title {
 	left: 0px;
 	top: 0px;
@@ -164,7 +266,8 @@ body {
 	box-sizing: border-box;
 	padding: 10px;
 	padding-left: 70px;
-	cursor: pointer;  
+	cursor: pointer;
+	--pressed: false; 
 }
 #profile_performance_title {
 	left: 0px;
@@ -198,6 +301,35 @@ body {
 	padding-left: 70px;
 	cursor: pointer;  
 }
+
+	#profile_homework_subtitle {
+		left: 60px;
+		top: 10px;
+		position: absolute;
+		height: 40px;
+		width: 350px;
+		z-index: 6;
+		font-family: proxima_nova_bold; 
+		font-size: 22.5pt;
+		color: #3b4694;
+		display: none;
+		text-align: left;		
+	}
+
+	#profile_homework_content {
+		left: 330px;
+		top: 10px;
+		position: absolute;
+		display: none;
+		height: 240px;
+		width: 250px;
+		z-index: 6;
+		font-family: proxima_nova_regular; 
+		font-size: 22.5pt;
+		color: #3b4694;
+		text-align: left; 		
+	}
+
 #profile_finances_title {
 	left: 0px;
 	top: 180px;
