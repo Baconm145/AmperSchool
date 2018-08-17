@@ -41,6 +41,9 @@ app.use('/favicon.ico', express.static('public/images/favicon.ico'));
 
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
-require('./user').init(app)
+var user = require('./user')
+user.init(app)
+user.post(app)
+
 
 module.exports = app

@@ -43,6 +43,27 @@ jQuery( function($) {
         $( "#profile_timetable_content" ).fadeIn( "fast" )
     } )
 
+    $( "#profile_finances_title" ).click(function() {
+
+        $( "#profile_content" ).children().fadeOut( "fast" )
+        
+        $( this ).prop( 'pressed', true )
+        $( "#profile_general" ).children().not( $(this) ).prop( 'pressed', false )
+
+        $( "#profile_general" ).children().not( $(this) ).animate( {
+            backgroundColor: "transparent",
+            color: "#3b4694"
+        }, 100 )  
+
+        $( this ).animate( {
+            backgroundColor: "#3b4694",
+            color: "#fffff"
+        }, 0 )
+        
+        $( "#profile_finances_subtitle" ).fadeIn( "fast" )
+        $( "#profile_finances_content" ).fadeIn( "fast" )
+    } )
+
     $( "#profile_homework_title" ).click(function() {
 
         $( "#profile_content" ).children().fadeOut( "fast" )
@@ -205,6 +226,7 @@ jQuery( function($) {
                             contentType: 'application/json', 
                             data: JSON.stringify({date:date}),
                             success: function(  res ) {
+
                                 var content = 'Посещ:'
                                 if ( res[1] ) {
                                     content += ' не был<br>'
@@ -212,7 +234,7 @@ jQuery( function($) {
                                     content += ' был<br>'
                                 }
                                 for ( var i = 0; i < res[0].length; i++ ) {
-                                    content += res[0][i].info + ': ' + res[0][i].mark 
+                                    content += res[0][i].info + ': ' + res[0][i].mark + '<br>'
                                 }
                                 $( "#profile_performance_marks" ).fadeOut( "fast", function() {
                                     $( "#profile_performance_marks" ).html( 

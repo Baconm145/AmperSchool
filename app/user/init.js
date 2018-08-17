@@ -15,52 +15,9 @@ function initUser (app) {
   } )
   app.get('/profile',  passport.authenticationMiddleware(), renderProfile)
 
-  app.post('/showMark', jsonParser, function(req, res) {
-
-    if(!req.body) return res.sendStatus(400)
-
-    if ( !req.isAuthenticated() ) { res.redirect('/') }
-
-    var usr = req.user
-
-    database.findLessonByDate( formDate( req.body.date ) ).then( function( lesson ) {
-      database.findMarks( usr.id, lesson.id ).then( function( marks ) {
-        var absent = false
-        if ( lesson.absents !=  null ) {
-          if ( lesson.absents.includes( usr.id ) ) {
-            absent = true
-          }
-        }
-        res.json( [marks, absent] )
-      } )
-    } )
-  } )
-
   app.use(bodyParser.urlencoded({
     extended: true
-  }));
-
-  app.post('/showDates', jsonParser, function(req, res) {
-
-    if(!req.body) return res.sendStatus(400)
-
-    if ( !req.isAuthenticated() ) { res.redirect('/') }
-    
-    var dates = []
-
-    var usr = req.user
-    database.findGroup( usr.id ).then( function( group ) {
-
-      database.findLessons( group.id ).then( function( lessons ) {
-        for ( var i = 0; i < lessons.length; i++ ) {
-          if ( lessons[i].date.getMonth() == req.body.month ) {
-            dates.push( lessons[i].date )
-          }
-        }
-        res.json( dates )
-      })
-    })
-  })
+  }))
 
   app.post('/login', function(req, res, next) {
     passport.authenticate('local', function(err, user, info) {
@@ -76,12 +33,21 @@ function initUser (app) {
           })
         )
       }
-
-      req.logIn(user, function(err) {
-        if (err) { return next(err) }
-        return res.redirect('/profile')
-      })
-
+      var rights = [ 'student', 'admin', 'teacher' ]
+      if ( rights.includes( user.rights ) ) {
+        req.logIn(user, function(err) {
+          if (err) { return next(err) }
+          return res.redirect('/profile')
+        })
+      } else {
+        return( 
+          res.render( 'home', {
+            layout: false,
+            unauthorized: true,
+            fail: true
+          })
+        )
+      }
     })(req, res, next);
   })
   app.post('/logout', function( req, res ) {
@@ -143,6 +109,37 @@ function renderMainUnAuthorized( req, res ) {
 }
 
 function renderProfile( req, res ) {
+  if ( req.user.rights == 'student' ) {
+    renderStudentProfile( req, res )
+  } 
+  if ( req.user.rights == 'teacher' ) {
+    renderTeacherProfile( req, res )
+  }
+}
+
+function renderTeacherProfile( req, res ) {
+  usr = req.user
+  var nameString = usr.firstname.charAt(0) + '. ' + usr.lastname;
+  var options
+  database.findEveryGroup().then( function( groups ) {
+    options = formOptions( groups )
+    res.render( 'profileTeacher', {
+      layout: false,
+      name: nameString,
+      options: options
+    })
+  })
+}
+
+function formOptions( groups ) {
+  var result = ''
+  for ( var i = 0; i < groups.length; i++ ) {
+    result += '<option value="' + groups[i].id + '">' +  groups[i].id + '. ' + groups[i].name + '</option>'
+  }
+  return result
+}
+
+function renderStudentProfile( req, res ) {
   var usr = req.user
   var nameString = usr.firstname.charAt(0) + '. ' + usr.lastname;
 
@@ -152,43 +149,70 @@ function renderProfile( req, res ) {
 
   database.findGroup( usr.id ).then( function( group ) {
 
-    database.findLessons( group.id ).then( function( lessons ) {
+    database.findHomework( group.id ).then( function( hometask ) {
+      
+      database.findPayments( usr.id ).then( function( payments ) {
 
-      timetable = formTimetable( group )
-      months = formMonths()
+        homework = hometask.task
 
-      res.render( 'profile', {
-        layout: false,
-        name: nameString,
-        timetable: timetable,
-        months: months
+        timetable = formTimetable( group )
+        months = formMonths()
+        payinfo = formPayInfo( payments )
+
+        res.render( 'profile', {
+          layout: false,
+          name: nameString,
+          timetable: timetable,
+          months: months,
+          homework: homework,
+          payinfo: payinfo
+        })
       })
-
     })
   })  
 }
 
-function formDate( date ) {
+function formPayInfo( payments ) {
   var result = ''
-  var month = date.substring( 3 )
-  var day = date.substring( 0, 2 )
-  var d = new Date()
-  if ( month > 9 ) {
-    result += d.getFullYear() - 1
-  } else {
-    result += d.getFullYear()
+
+  if ( payments.length < 1 ) {
+    return 'Вы ещё не произвели ни одного платежа'
   }
-  result += '-' + month + '-' + day
+
+  var date_sort = function ( pay1, pay2 ) {
+    if (pay1.date > pay2.date) return 1;
+    if (pay1.date < pay2.date) return -1;
+    return 0;
+  }
+  payments.sort( date_sort )
+
+
+  var last = payments.length - 1
+  var date = payments[ last ].date
+  var day = date.getDate()
+  var month = date.getMonth() + 1
+
+  if ( day < 10 ) {
+    day = '0' + day
+  }
+
+  if ( month < 10 ) {
+    month = '0' + month
+  }
+
+  result += 'Последний платеж: '+ day + '.' + month + '.' + date.getFullYear()
+
   return result
 }
+
 
 function formMonths(  ) {
   var result = ''
   var d = new Date()
   var currentMonth = d.getMonth()
   var monthsPassed = 0
-  if ( currentMonth > 8 ) {
-    monthsPassed = ( currentMonth - 9 )
+  if ( currentMonth >= 8 ) {
+    monthsPassed = ( currentMonth - 8 )
   } else {
     monthsPassed = ( currentMonth + 4 )
   }

@@ -1,0 +1,458 @@
+#group_amount_content {
+    left: 345px;
+    top: 20px;
+    position: absolute;
+    width: 220px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_regular; 
+    font-size: 13pt;
+    text-align: center;
+}
+#group_list_content {
+    left: 620px;
+    top: 20px;
+    position: absolute;
+    width: 120px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_regular; 
+    font-size: 13pt;
+    text-align: right;
+}
+#group_date_content {
+    left: 750px;
+    top: 20px;
+    position: absolute;
+    width: 220px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_regular; 
+    font-size: 13pt;
+    text-align: right;
+}
+
+#group_date_content_hint {
+    left: 730px;
+    top: 100px;
+    position: absolute;
+    width: 220px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_regular; 
+    font-size: 13pt;
+    text-align: right;
+}
+
+#addLessonsButton {
+    left: 50px;
+    top: 50px;
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    background-color: #3b4694;
+    color: #ffffff;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+input[text] {
+    left: 0px;
+    top: 0px;
+}
+#addLessonsAmount {
+    left: 360px;
+    top: 50px;
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+
+#addLessonsList {
+    left: 440px;
+    top: 50px;
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+#addLessonsDate {
+    left: 750px;
+    top: 50px;
+    position: absolute;
+    width: 230px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+
+#form {
+    left: 100px;
+}
+
+.form {
+    left: 100px;
+}
+
+#addMarkButton {
+    left: 50px;
+    top: 150px;
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    background-color: #3b4694;
+    color: #ffffff;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#addMarkList {
+    left: 440px;
+    top: 150px;
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+#addMarkDate {
+    left: 750px;
+    top: 150px;
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+#addMarkStudent {
+    left: 920px;
+    top: 150px;
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+
+#addMarkMark {
+    left: 1090px;
+    top: 150px;
+    position: absolute;
+    width: 60px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+
+#addMarkDiscr {
+    left: 440px;
+    top: 210px;
+    position: absolute;
+    width: 710px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+
+.change_mark_form {
+    left: 50px;
+    top: 270px;
+    position: absolute;
+    width: 1150px;
+    height: 110px;
+}
+
+#changeMarkButton {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    background-color: #3b4694;
+    color: #ffffff;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#changeMarkList {
+    left: 390px;
+    top: 0px;
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+#changeMarkDate {
+    left: 700px;
+    top: 0px;
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+#changeMarkStudent {
+    left: 870px;
+    top: 0x;
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+
+#changeMarkMark {
+    left: 1040px;
+    top: 0px;
+    position: absolute;
+    width: 60px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+
+#changeMarkDiscr {
+    left: 390px;
+    top: 60px;
+    position: absolute;
+    width: 710px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+
+
+.absent_form{
+    left:50px;
+    top:390px;
+    position: absolute;
+    width: 1150px;
+    height: 110px;
+}
+
+
+#absent_button {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    background-color: #3b4694;
+    color: #ffffff;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#absent_group {
+    left: 390px;
+    top: 0px;
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+#absent_lesson {
+    left: 700px;
+    top: 0px;
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+#absent_student {
+    left: 870px;
+    top: 0x;
+    position: absolute;
+    width: 160px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+
+#absent_absent {
+    left: 1040px;
+    top: 0px;
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+
+.homework_form{
+    left:50px;
+    top:460px;
+    position: absolute;
+    width: 1150px;
+    height: 110px;
+}
+
+#homework_button {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    background-color: #3b4694;
+    color: #ffffff;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#homework_group {
+    left: 390px;
+    top: 0px;
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+#homework_homework {
+    left: 700px;
+    top: 0px;
+    position: absolute;
+    width: 460px;
+    height: 50px;
+    background-color: #ffffff;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    border: 1px;
+    border-color: #6d6d6d;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
