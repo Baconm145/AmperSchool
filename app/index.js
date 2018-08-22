@@ -2,6 +2,7 @@ const path = require('path')
 const passport = require('passport')
 const express = require('express')
 const session = require('express-session')
+var httpsRedirect = require('express-https-redirect');
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const favicon = require('express-favicon');
@@ -9,6 +10,8 @@ const RedisStore = require('connect-redis')(session)
 const config = require('../config')
 const app = express()
 require('./auth').init(app)
+
+app.use('*', httpsRedirect(true));
 
 app.engine('.hbs', exphbs({
     defaultLayout: 'main',
