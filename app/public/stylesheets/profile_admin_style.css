@@ -1,0 +1,295 @@
+
+#background { 
+	left: 0px;
+	top: 0px;
+	position: relative;
+	margin: 0;
+	margin-left: 0;
+    padding: 0;
+    height: 1500px;
+	margin-right: 0;
+	z-index:0;
+}
+
+#admin_profile_background { 
+	left: 0px; 
+    top: 60px;
+    position: absolute;
+	z-index: 1;
+}
+
+.group_form{
+    left:50px;
+    top:530px;
+    position: absolute;
+    width: 1150px;
+    height: 150px;
+}
+
+#group_button {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    background-color: #3b4694;
+    color: #ffffff;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#group_name {
+    left: 390px;
+    top: 0px;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 10px
+}
+#group_timetable {
+    left: 600px;
+    top: 0px;
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px
+}
+
+.group_edit_form {
+    left:50px;
+    top:690px;
+    position: absolute;
+    width: 1150px;
+    height: 150px;
+}
+
+#group_edit_button {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    background-color: #3b4694;
+    color: #ffffff;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#group_edit_name {
+    left: 390px;
+    top: 0px;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px
+}
+#group_edit_timetable {
+    left: 600px;
+    top: 0px;
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px
+}
+
+.user_form {
+    left:50px;
+    top:860px;
+    position: absolute;
+    width: 1150px;
+    height: 150px;
+}
+
+#user_button {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    width: 320px;
+    height: 50px;
+    background-color: #3b4694;
+    color: #ffffff;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#user_firstname {
+    left: 390px;
+    top: 0px;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 10px
+}
+#user_lastname {
+    left: 600px;
+    top: 0px;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    border: 1px solid;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px
+}
+
+#user_email {
+    left: 810px;
+    top: 0px;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+#user_city {
+    left: 1020px;
+    top: 0px;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px
+}
+
+#user_rights {
+    left: 390px;
+    top: 60px;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 10px
+}
+
+#user_username {
+    left: 600px;
+    top: 60px;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px
+}
+
+
+#user_group {
+    left: 810px;
+    top: 60px;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 10px
+}
+
+#user_password {
+    left: 1020px;
+    top: 60px;
+    position: absolute;
+    width: 140px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px
+}
+
+#user_password_generate {
+    left: 1170px;
+    top: 60px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 10px;
+    z-index: 10;
+    background:url(../images/dice.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+}

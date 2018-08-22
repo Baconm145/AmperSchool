@@ -205,6 +205,7 @@ input[text] {
     color: #3b4694;
     font-family: proxima_nova_bold; 
     font-size: 22.5pt;
+    border: 1px solid;
     text-align: left;
     box-sizing: border-box;
     padding: 5px;
@@ -454,5 +455,6 @@ input[text] {
     text-align: center;
     box-sizing: border-box;
     padding: 5px;
+    border: 1px solid;
     border-radius: 10px
 }

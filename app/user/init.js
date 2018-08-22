@@ -115,6 +115,9 @@ function renderProfile( req, res ) {
   if ( req.user.rights == 'teacher' ) {
     renderTeacherProfile( req, res )
   }
+  if ( req.user.rights == 'admin' ) {
+    renderAdminProfile( req, res )
+  }
 }
 
 function renderTeacherProfile( req, res ) {
@@ -124,6 +127,20 @@ function renderTeacherProfile( req, res ) {
   database.findEveryGroup().then( function( groups ) {
     options = formOptions( groups )
     res.render( 'profileTeacher', {
+      layout: false,
+      name: nameString,
+      options: options
+    })
+  })
+}
+
+function renderAdminProfile( req, res ) {
+  usr = req.user
+  var nameString = usr.firstname.charAt(0) + '. ' + usr.lastname;
+  var options
+  database.findEveryGroup().then( function( groups ) {
+    options = formOptions( groups )
+    res.render( 'profileAdmin', {
       layout: false,
       name: nameString,
       options: options
@@ -147,7 +164,7 @@ function renderStudentProfile( req, res ) {
   var months
   var dates
 
-  database.findGroup( usr.id ).then( function( group ) {
+  database.findGroup( usr.group_id ).then( function( group ) {
 
     database.findHomework( group.id ).then( function( hometask ) {
       
@@ -223,29 +240,13 @@ function formMonths(  ) {
   return result
 }
 
-function formTimetable( group ) {
-  var res = ''
-  if ( group.dotw_0 != null ) {
-    res+= 'пн:  ' + group.dotw_0.substring(0, 5) + ' - ' + ( parseInt( group.dotw_0.substring(0, 2) ) + 2 ).toString() + ':00 '
+function formTimetable( group ) {  
+  var res = group.timetable
+  if ( res != null ) {  
+    var res = res.replace(/\n/g,"<br>")  
+    return res
+  } else {
+    return ''
   }
-  if ( group.dotw_1 != null ) {
-    res+= 'вт:  ' + group.dotw_1.substring(0, 5) + ' - ' + ( parseInt( group.dotw_0.substring(0, 2) ) + 2 ).toString() + ':00 '
-  }
-  if ( group.dotw_2 != null ) {
-    res+= 'ср:  ' + group.dotw_2.substring(0, 5) + ' - ' + ( parseInt( group.dotw_0.substring(0, 2) ) + 2 ).toString() + ':00 '
-  }
-  if ( group.dotw_3 != null ) {
-    res+= 'чт:  ' + group.dotw_3.substring(0, 5) + ' - ' + ( parseInt( group.dotw_0.substring(0, 2) ) + 2 ).toString() + ':00 '
-  }
-  if ( group.dotw_4 != null ) {
-    res+= 'пт:  ' + group.dotw_4.substring(0, 5) + ' - ' + ( parseInt( group.dotw_0.substring(0, 2) ) + 2 ).toString() + ':00 '
-  }
-  if ( group.dotw_5 != null ) {
-    res+= 'сб:  ' + group.dotw_5.substring(0, 5) + ' - ' + ( parseInt( group.dotw_0.substring(0, 2) ) + 2 ).toString() + ':00 '
-  }
-  if ( group.dotw_6 != null ) {
-    res+= 'вс:  ' + group.dotw_6.substring(0, 5) + ' - ' + ( parseInt( group.dotw_0.substring(0, 2) ) + 2 ).toString() + ':00 '
-  }
-  return res
 }
 module.exports = initUser

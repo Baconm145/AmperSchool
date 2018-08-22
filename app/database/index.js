@@ -47,11 +47,26 @@ var knex = require('knex')({
     insertMark: function(  lesson_id, student_id, mark, info ) {
       return knex.insert( {'lesson_id': lesson_id, 'student_id': student_id, 'mark' : mark, 'info' : info} ).into('marks')
     },
+    insertGroup: function( name, timetable ) {
+      return knex.insert( { 'name': name, 'timetable': timetable } ).into('groups')
+    },
+    insertUser: function( firstname, lastname, email, city, rights, username, group_id) {
+      return knex.insert( { 'firstname': firstname, 'lastname': lastname, 'email': email, 'city': city, 'rights': rights, 'username': username, 'group_id': group_id } ).into('users')
+    },
+    insertHash: function( user_id, password ) {
+      return knex.insert( { 'id': user_id, 'password': password } ).into('passwords')
+    },
+    findGroupByName: function( name ) {
+      return knex.select().from('groups').where( 'name', name )
+    },
     changeMark: function( mark_id, mark ) {
       return knex('marks').where( 'id', mark_id ).update( 'mark', mark )
     },
     updateAbsents: function( lesson_id, absents ) {
       return knex('lessons').where( 'id', lesson_id ).update( 'absents', absents )
+    },
+    updateGroup: function( id, timetable){
+      return knex('groups').where( 'id', id ).update( 'timetable', timetable )
     },
     updateHomework: function( group_id, homework ) {
       return knex('homework').where( 'group_id', group_id ).update( 'task', homework )

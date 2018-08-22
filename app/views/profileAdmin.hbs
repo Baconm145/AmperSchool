@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="text/html, charset=UTF-8" />
+		<title>Личный кабинет</title>
+		<script src="javascripts/jquery.min.js"></script>
+		<script src="javascripts/resize.js"></script>		
+		<script src="javascripts/jquery.animate-colors-min.js"></script>
+		<script src="javascripts/profile.js"></script>
+		<script src="javascripts/teacher/add_lesson.js"></script>
+		<script src="javascripts/teacher/add_mark.js"></script>
+		<script src="javascripts/teacher/change_mark.js"></script>
+		<script src="javascripts/teacher/absent.js"></script>
+		<script src="javascripts/teacher/homework.js"></script>
+		<script src="javascripts/admin/add_group.js"></script>
+		<script src="javascripts/admin/change_group.js"></script>
+		<script src="javascripts/admin/add_user.js"></script>
+		<link href="stylesheets/profile_general_style.css" rel="stylesheet" type="text/css">
+		<link href="stylesheets/profile_teacher_style.css" rel="stylesheet" type="text/css">
+		<link href="stylesheets/profile_admin_style.css" rel="stylesheet" type="text/css">
+		<link href="stylesheets/start_style.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div id="background">
+			<div id="start_topbox">
+				<div id="start_logo"><img src="images/logo.png"></div>
+				<div id="start_name">Личный кабинет</div>
+				<div id="start_user">{{name}}</div>
+				<form action="/logout" method="post">
+					<input type="submit" ID="authorized_profile" value="ВЫЙТИ">
+				</form>
+				<form action="/" method="get">
+					<input type="submit" ID="profile" value="ГЛАВНАЯ">
+				</form>
+			</div>			
+			<div id="profile_background">
+				<img src="images/background.png">
+			</div>
+			<div id="admin_profile_background">
+                <div id="addLessonsButton">Добавить занятие</div>
+                <div id="group_date_content">Строго по образцу!</div>
+
+                <form action="#" name="add_lesson_form" class='add_lesson_form'>
+                    <input name="date" type="text" id="addLessonsDate" placeholder="ДД.ММ">
+                    <input type="submit" id="addLessonsButton" value="Добавить занятие">
+                    <select name="group_id" id="addLessonsList">
+                        <option value="" selected disabled hidden>Группа</option>
+                        {{{options}}}
+                    </select>
+                </form>
+
+                <form action="#" name="add_mark_form" class="add_mark_form">
+                    <select name="add_mark_group" id="addMarkList">
+                        <option value="" selected disabled hidden>Группа</option>
+                        {{{options}}}
+                    </select>
+                    <select name="add_mark_date" id="addMarkDate">
+                        <option value="" selected disabled hidden>Занятие</option>
+                    </select>
+					<select name="add_mark_student" id="addMarkStudent">
+                        <option value="" selected disabled hidden>Студент</option>
+					</select>
+					<select name="add_mark_mark" id="addMarkMark">
+                        <option value="5" >5</option>
+                        <option value="4" >4</option>
+                        <option value="3" >3</option>
+                        <option value="2" >2</option>
+					</select>
+					<input name="add_mark_disc" type="text" id="addMarkDiscr" placeholder="Оцениваемое задание">
+                    <input type="submit" id="addMarkButton" value="Поставить оценку">
+                </form>
+
+				<form action="#" name="change_mark_form" class="change_mark_form">					
+					<select name="change_mark_student" id="changeMarkStudent">
+                        <option value="" selected disabled hidden>Студент</option>
+					</select>
+					<select name="change_mark_group" id="changeMarkList">
+                        <option value="" selected disabled hidden>Группа</option>
+                        {{{options}}}
+                    </select>
+                    <select name="change_mark_date" id="changeMarkDate">
+                        <option value="" selected disabled hidden>Занятие</option>
+                    </select>
+					<select name="change_mark_mark" id="changeMarkMark">
+                        <option value="5" >5</option>
+                        <option value="4" >4</option>
+                        <option value="3" >3</option>
+                        <option value="2" >2</option>						
+                        <option value="null" >Удалить</option>
+					</select>
+					<select name="change_mark_disc" id="changeMarkDiscr">
+                        <option value="" selected disabled hidden>Задание</option>
+					</select>
+                    <input type="submit" id="changeMarkButton" value="Изменить оценку">
+				</form>
+
+				<form action="#" name="absent_form" class="absent_form">
+
+					<input type="submit" id="absent_button" value="Отметить">
+
+					<select name="absent_group_id" id="absent_group">
+                        <option value="" selected disabled hidden>Группа</option>
+                        {{{options}}}
+					</select>
+
+					<select name="absent_lesson_id" id="absent_lesson">
+                        <option value="" selected disabled hidden>Занятие</option>	
+					</select>
+
+					<select name="absent_student_id" id="absent_student">
+                        <option value="" selected disabled hidden>Студент</option>
+					</select>
+
+					<select name="absent_absent" id="absent_absent">
+					</select>
+
+				</form>
+
+				<form action="#" name="homework_form" class="homework_form">
+
+					<input type="submit" id="homework_button" value="Задать ДЗ">
+
+					<select name="homework_group_id" id="homework_group">
+                        <option value="" selected disabled hidden>Группа</option>
+                        {{{options}}}
+					</select>
+
+					<input type="text" name="homework_homework" id="homework_homework" placeholder="Задание">
+
+				</form>
+
+				<form action="#" name="group_form" class="group_form">
+
+					<input type="submit" id="group_button" value="Создать группу">
+
+					<input type="text" name="group_name" id="group_name" placeholder="Название">
+					<textarea name="group_timetable" id="group_timetable" placeholder="Расписание"></textarea>		
+
+				</form>
+
+				<form action="#" name="group_edit_form" class="group_edit_form">
+
+					<input type="submit" id="group_edit_button" value="Изменить группу">
+
+					<textarea name="group_edit_timetable" id="group_edit_timetable" placeholder="Расписание"></textarea>
+					
+                    <select name="group_edit_name" id="group_edit_name">
+                        <option value="" selected disabled hidden>Группа</option>
+                        {{{options}}}
+                    </select>
+
+				</form>
+
+				<form action="#" name="user_form" class="user_form">
+
+					<input type="submit" id="user_button" value="Новый пользователь">
+
+					<input type="text" name="user_firstname" id="user_firstname" placeholder="Имя">
+					<input type="text" name="user_lastname" id="user_lastname" placeholder="Фамилия">
+					<input type="text" name="user_email" id="user_email" placeholder="Email">
+					<input type="text" name="user_city" id="user_city" placeholder="Город">
+					<select type="text" name="user_rights" id="user_rights">
+                        <option value="" selected disabled hidden>Права</option>
+                        <option value="student">Ученик</option>
+                        <option value="admin">Админитратор</option>
+                        <option value="teacher">Преподаватель</option>
+					</select>
+					<input type="text" name="user_username" id="user_username" placeholder="Логин">
+					<select name="user_group" id="user_group">
+                        <option value="" selected disabled hidden>Группа</option>
+                        {{{options}}}
+                    </select>
+					<input type="text" name="user_password" id="user_password" placeholder="Пароль">
+					<input type="button" name="user_password_generate" src="images/dice.png" id="user_password_generate">
+					
+
+				</form>
+
+			</div>
+		</div>
+ 	</body>
+ </html>
