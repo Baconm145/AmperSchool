@@ -3,7 +3,11 @@ jQuery( function($) {
 
         var data = $(".absent_form").serializeArray()
 
-        var group_id = data.find(serialize_group_id).value
+        console.log( data )
+        console.log( data.find(serialize_group_id) )
+
+        var group_id = data[0].value
+        
 
         getLessons( group_id ).then( function( result ) {
             var options = '<option value="" selected disabled hidden>Занятие</option>'

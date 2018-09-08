@@ -3,13 +3,66 @@ const database = require( '../database' )
 const bodyParser = require( 'body-parser' )
 const nodemailer = require('nodemailer')
 const bcrypt = require('bcrypt')
+const uuidv1 = require('uuid/v1');
 const jsonParser = bodyParser.json()
+const yandexCheckout = require('./payment')
 
 function initPost( app ) {
 
     app.use(bodyParser.urlencoded({
         extended: true
     }));
+
+    app.post('/getPaymentInfo', jsonParser, function(req, res) {
+        console.log(req)
+    })
+
+    app.post('/createPayment', jsonParser, function(req, res) {
+
+        if(!req.body) return res.sendStatus(400)
+    
+        if ( !req.isAuthenticated() ) { res.redirect('/') }
+
+        var amount = req.body.amount
+
+        var idempotenceKey = uuidv1()
+
+        createPayment( amount, idempotenceKey )
+        .then(function(result) {
+            res.redirect( result.confirmation.confirmation_url )
+            console.log( result );
+          })
+        .catch(function(err) {
+            console.error(err);
+        })
+        
+    })
+
+    function createPayment( amount, idempotenceKey ) {
+        var promiseResult = new Promise( function( resolve, reject ) {
+            yandexCheckout.createPayment({
+                'amount': {
+                  'value': amount,
+                  'currency': 'RUB'
+                },
+                'confirmation': {
+                  'type': 'redirect',
+                  'return_url': 'https://www.amper.spb.ru'
+                }
+            }, idempotenceKey)
+            .then( function( result ) {
+                if ( result.status == "processing" ) {
+                    this( amount, idempotenceKey )
+                } else {
+                    resolve( result )
+                }
+            })
+            .catch( function(err) {
+                reject( err )
+            })
+        })
+        return promiseResult
+    }
 
     app.post('/sendMark', jsonParser, function(req, res) {
 
@@ -46,7 +99,7 @@ function initPost( app ) {
 
         usr = req.user
         
-        database.findLessonByDate( formDate( req.body.date ) ).then( function( lesson ) {
+        database.findLessonByDate( formDate( req.body.date ), usr.group_id ).then( function( lesson ) {
             if ( lesson == undefined ) { 
                 res.json( 'Нет информации' )
             } else {
@@ -81,6 +134,7 @@ function initPost( app ) {
     
         if ( !req.isAuthenticated() ) { res.redirect('/') }
 
+        price = req.body.group_price
         name = req.body.group_name
         timetable = req.body.group_timetable
 
@@ -88,10 +142,22 @@ function initPost( app ) {
             if ( result.length != 0 ) {
                 res.json( 'Такая группа уже существует!' )
             } else {
-                database.insertGroup( name, timetable ).then( function() {
+                database.insertGroup( name, timetable, price ).then( function() {
                     res.json( 'Успешно!' )
                 })
             }
+        })
+    })
+
+    app.post('/getGroup', jsonParser, function( req, res ) {
+        if(!req.body) return res.sendStatus(400)
+    
+        if ( !req.isAuthenticated() ) { res.redirect('/') }
+
+        id = req.body.group_id
+
+        database.findGroup( id ).then( function( result ) {
+            res.json( result )
         })
     })
 
@@ -102,8 +168,23 @@ function initPost( app ) {
 
         id = req.body.group_id
         timetable = req.body.group_timetable
+        price = req.body.group_price
 
-        database.updateGroup( id, timetable ).then( function() {
+        database.updateGroup( id, timetable, price ).then( function() {
+            res.json( 'Успешно!' )
+        })
+    })
+
+    app.post('/editGroup', jsonParser, function( req, res ) {
+        if(!req.body) return res.sendStatus(400)
+    
+        if ( !req.isAuthenticated() ) { res.redirect('/') }
+
+        id = req.body.group_id
+        timetable = req.body.group_timetable
+        price = req.body.group_price
+
+        database.updateGroup( id, timetable, price ).then( function() {
             res.json( 'Успешно!' )
         })
     })
@@ -151,7 +232,19 @@ function initPost( app ) {
 
         lesson_id = req.body.lesson_id
         student_id = req.body.student_id
+        console.log( student_id )
         absent = req.body.absent
+
+        Array.prototype.remove = function() {
+            var what, a = arguments, L = a.length, ax;
+            while (L && this.length) {
+                what = a[--L];
+                while ((ax = this.indexOf(what)) !== -1) {
+                    this.splice(ax, 1);
+                }
+            }
+            return this;
+        };
 
         database.findLesson( lesson_id ).then( function( lesson ) {
             absents = lesson.absents
@@ -165,7 +258,18 @@ function initPost( app ) {
                     } else {
                         absents.push( parseInt(student_id) )
                     }
-                }
+                }            
+            }
+            if ( absent == 'true' ) {
+                if ( absents == null ) {
+                    absents = []
+                } else {
+                    if ( absents.includes( parseInt(student_id) ) ) {
+                        absents.remove( parseInt(student_id) )
+                    } else {
+                        res.json( 'success' )
+                    }
+                }            
             }
             database.updateAbsents( lesson_id, absents ).then( function( result ) {
                 res.json( 'success' )
@@ -236,7 +340,7 @@ function initPost( app ) {
     
         var usr = req.user
 
-        database.findGroup( usr.id ).then( function( group ) {    
+        database.findGroup( usr.group_id ).then( function( group ) {    
             database.findLessons( group.id ).then( function( lessons ) {
                 for ( var i = 0; i < lessons.length; i++ ) {
                     if ( lessons[i].date.getMonth() == req.body.month ) {

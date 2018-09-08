@@ -3,3 +3,4 @@ node_modules
 # Config
 config
 sslcert
+app/user/payment.js

@@ -72,6 +72,21 @@
     padding: 10px;
     border-radius: 10px
 }
+#group_price {
+    left: 810px;
+    top: 0px;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 10px;
+}
 
 .group_edit_form {
     left:50px;
@@ -125,6 +140,22 @@
     box-sizing: border-box;
     padding: 10px;
     border-radius: 10px
+}
+
+#group_edit_price {
+    left: 810px;
+    top: 0px;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    color: #3b4694;
+    font-family: proxima_nova_bold; 
+    font-size: 22.5pt;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 10px;
 }
 
 .user_form {

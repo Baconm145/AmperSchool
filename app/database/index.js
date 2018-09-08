@@ -26,8 +26,8 @@ var knex = require('knex')({
     findPayments: function( user_id ) {
       return knex.select().from('payments').where( 'user_id', user_id )
     },
-    findLessonByDate: function( date ) {  
-      return knex.select().from('lessons').whereBetween('date', [date + ' 00:00:00', date + ' 23:59:59' ] ).first()
+    findLessonByDate: function( date, group_id ) {  
+      return knex.select().from('lessons').whereBetween('date', [date + ' 00:00:00', date + ' 23:59:59' ] ).where( 'group_id', group_id ).first()
     },
     findMarks: function( student_id, lesson_id ) {  
       return knex.select().from('marks').where('student_id', student_id).andWhere('lesson_id', lesson_id)
@@ -47,8 +47,8 @@ var knex = require('knex')({
     insertMark: function(  lesson_id, student_id, mark, info ) {
       return knex.insert( {'lesson_id': lesson_id, 'student_id': student_id, 'mark' : mark, 'info' : info} ).into('marks')
     },
-    insertGroup: function( name, timetable ) {
-      return knex.insert( { 'name': name, 'timetable': timetable } ).into('groups')
+    insertGroup: function( name, timetable, price ) {
+      return knex.insert( { 'name': name, 'timetable': timetable, 'price': price } ).into('groups')
     },
     insertUser: function( firstname, lastname, email, city, rights, username, group_id) {
       return knex.insert( { 'firstname': firstname, 'lastname': lastname, 'email': email, 'city': city, 'rights': rights, 'username': username, 'group_id': group_id } ).into('users')
@@ -65,8 +65,8 @@ var knex = require('knex')({
     updateAbsents: function( lesson_id, absents ) {
       return knex('lessons').where( 'id', lesson_id ).update( 'absents', absents )
     },
-    updateGroup: function( id, timetable){
-      return knex('groups').where( 'id', id ).update( 'timetable', timetable )
+    updateGroup: function( id, timetable, price){
+      return knex('groups').where( 'id', id ).update( 'timetable', timetable ).update( 'price', price )
     },
     updateHomework: function( group_id, homework ) {
       return knex('homework').where( 'group_id', group_id ).update( 'task', homework )

@@ -53,7 +53,7 @@ jQuery( function($) {
         $( "#profile_general" ).children().not( $(this) ).animate( {
             backgroundColor: "transparent",
             color: "#3b4694"
-        }, 100 )  
+        }, 100 )
 
         $( this ).animate( {
             backgroundColor: "#3b4694",

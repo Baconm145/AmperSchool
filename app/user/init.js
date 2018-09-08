@@ -182,7 +182,8 @@ function renderStudentProfile( req, res ) {
           timetable: timetable,
           months: months,
           homework: homework,
-          payinfo: payinfo
+          payinfo: payinfo,
+          finances: usr.balance
         })
       })
     })
