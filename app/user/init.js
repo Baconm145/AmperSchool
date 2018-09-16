@@ -171,7 +171,7 @@ function renderStudentProfile( req, res ) {
       database.findPayments( usr.id ).then( function( payments ) {
 
         homework = hometask.task
-
+        var finances = "Р/счет № 40802810828000003990 <br>ИНН получателя: 110213678801 <br>БИК: 048702640 <br>КПП: 110202001 <br>Наименование организации: ИП Платонов Никита Дмитриевич <br>Назначение платежа необходимо заполнить следующим образом: сначала фамилия и имя ребенка, затем месяц. Например: Иванов Иван. Сентрябрь <br>Сохраните и распечатайте квитанции об оплате. <br>Совершить перевод можно через любой онлайн банк или через банкомат, а также с помощью сотрудника банка."
         timetable = formTimetable( group )
         months = formMonths()
         payinfo = formPayInfo( payments )
@@ -183,7 +183,7 @@ function renderStudentProfile( req, res ) {
           months: months,
           homework: homework,
           payinfo: payinfo,
-          finances: usr.balance
+          finances: finances
         })
       })
     })

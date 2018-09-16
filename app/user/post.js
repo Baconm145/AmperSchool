@@ -3,11 +3,12 @@ const database = require( '../database' )
 const bodyParser = require( 'body-parser' )
 const nodemailer = require('nodemailer')
 const bcrypt = require('bcrypt')
-const uuidv1 = require('uuid/v1');
+const uuidv1 = require('uuid/v1')
 const jsonParser = bodyParser.json()
 const yandexCheckout = require('./payment')
 
 function initPost( app ) {
+
 
     app.use(bodyParser.urlencoded({
         extended: true
