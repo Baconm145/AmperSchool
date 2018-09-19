@@ -117,14 +117,14 @@ function serialize_mark ( element, index, array ) {
     return false
 }
 
-function serialize_lesson_id ( element, index, array ) {
+function serialize_lesson_id_edit_mark ( element, index, array ) {
     if ( element.name == 'change_mark_date' ) {
         return true
     }
     return false
 }
 
-function serialize_student_id ( element, index, array ) {
+function serialize_student_id_edit_mark ( element, index, array ) {
     if ( element.name == 'change_mark_student' ) {
         return true
     }
@@ -135,14 +135,16 @@ function serialize_student_id ( element, index, array ) {
 function setMarksInfo( data, Discr ) {
     
     try {
-        var lesson_id = data.find(serialize_lesson_id).value
-        var student_id = data.find(serialize_student_id).value
+        var lesson_id = data.find(serialize_lesson_id_edit_mark).value
+        var student_id = data.find(serialize_student_id_edit_mark).value
     } catch( err ) {
         return err
     }
 
 
     return new Promise( function( resolve, reject ){
+
+        console.log( 'function called' )
 
         getMarksInfo( lesson_id, student_id )
         .then( function( result ) {

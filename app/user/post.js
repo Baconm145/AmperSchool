@@ -249,34 +249,38 @@ function initPost( app ) {
 
         database.findLesson( lesson_id ).then( function( lesson ) {
             absents = lesson.absents
+            absents_reasonable = lesson.absents_reasonable
+
+            if ( absents == null ) {
+                absents = {}
+            }
+
+            if ( absents_reasonable == null ) {
+                absents_reasonable = {}
+            }
+
             if ( absent == 'false' ) {
-                if ( absents == null ) {
-                    absents = []
-                    absents.push( parseInt(student_id) )
-                } else {
-                    if ( absents.includes( parseInt(student_id) ) ) {
-                        res.json( 'success' )
-                    } else {
-                        absents.push( parseInt(student_id) )
-                    }
-                }            
+                absents.push( parseInt(student_id) )
+                absents_reasonable.remove( parseInt(student_id) )
             }
+
             if ( absent == 'true' ) {
-                if ( absents == null ) {
-                    absents = []
-                } else {
-                    if ( absents.includes( parseInt(student_id) ) ) {
-                        absents.remove( parseInt(student_id) )
-                    } else {
-                        res.json( 'success' )
-                    }
-                }            
+                absents.remove( parseInt(student_id) )
+                absents_reasonable.remove( parseInt(student_id) )
             }
+
+            if ( absent == 'false_true' ) {
+                absents.remove( parseInt(student_id) )
+                absents_reasonable.push( parseInt(student_id) )
+            }
+            
             database.updateAbsents( lesson_id, absents ).then( function( result ) {
-                res.json( 'success' )
+                database.updateAbsentsReasonable( lesson_id, absents_reasonable ).then( function( reslut ) {
+                    res.json( 'success' )
+                })
             })
         })
-    })   
+    })
 
     app.post('/getAbsent', jsonParser, function(req, res) {
 
@@ -323,6 +327,9 @@ function initPost( app ) {
 
         database.findMarks( student_id, lesson_id )
         .then( function( result ) {
+            console.log( student_id )
+            console.log( lesson_id )
+            console.log(result)
             res.json( result )
         })
         .catch( function( err ) {

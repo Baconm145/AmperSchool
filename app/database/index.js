@@ -68,6 +68,9 @@ var knex = require('knex')({
     updateGroup: function( id, timetable, price){
       return knex('groups').where( 'id', id ).update( 'timetable', timetable ).update( 'price', price )
     },
+    updateAbsentsReasonable: function( lesson_id, absents_reasonable ) {
+      return knex('lessons').where( 'id', lesson_id ).update( 'absents_reasonable', absents_reasonable )
+    },
     updateHomework: function( group_id, homework ) {
       return knex('homework').where( 'group_id', group_id ).update( 'task', homework )
     },

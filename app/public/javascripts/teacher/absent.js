@@ -40,20 +40,30 @@ jQuery( function($) {
         .then( function(lesson) {
             var data = $(".absent_form").serializeArray()
             var student_id = data.find(serialize_student_id).value
-            if ( lesson.absents == null ) {
+            var abs = lesson.absents
+            var abs_reas = lesson.absents_reasonable
+
+            if ( abs == null ) {
+                abs = []
+            }
+            if ( abs_reas == null ) {
+                abs_reas = []
+            }
+
+            if ( abs.includes( parseInt(student_id) ) ) {
                 $("#absent_absent").html(
-                    '<option value="true" selected>П</option><option value="false">Н</option>'
+                    '<option value="true">П</option><option value="false" selected>Н</option><option value="false_true">Н.У</option>'
                 )
             } else {
-                if ( lesson.absents.includes( parseInt(student_id) ) ) {
-                    $("#absent_absent").html(
-                        '<option value="true">П</option><option value="false" selected >Н</option>'
-                    )
-                } else {
-                    $("#absent_absent").html(
-                        '<option value="true" selected >П</option><option value="false">Н</option>'
-                    )
-                }
+                $("#absent_absent").html(
+                    '<option value="true" selected>П</option><option value="false">Н</option><option value="false_true">Н.У</option>'
+                )
+            }
+
+            if ( abs_reas.includes( parseInt(student_id) ) ) {
+                $("#absent_absent").html(
+                    '<option value="true">П</option><option value="false">Н</option><option value="false_true" selected>Н.У</option>'
+                )
             }
         })
         .catch( function( err ) {
@@ -79,21 +89,32 @@ jQuery( function($) {
         .then( function(lesson) {
             var data = $(".absent_form").serializeArray()
             var student_id = data.find(serialize_student_id).value
-            if ( lesson.absents == null ) {
+            var abs = lesson.absents
+            var abs_reas = lesson.absents_reasonable
+
+            if ( abs == null ) {
+                abs = []
+            }
+            if ( abs_reas == null ) {
+                abs_reas = []
+            }
+
+            if ( abs.includes( parseInt(student_id) ) ) {
                 $("#absent_absent").html(
-                    '<option value="true" selected>П</option><option value="false">Н</option>'
+                    '<option value="true">П</option><option value="false" selected>Н</option><option value="false_true">Н.У</option>'
                 )
             } else {
-                if ( lesson.absents.includes( parseInt(student_id) ) ) {
-                    $("#absent_absent").html(
-                        '<option value="true">П</option><option value="false" selected >Н</option>'
-                    )
-                } else {
-                    $("#absent_absent").html(
-                        '<option value="true" selected >П</option><option value="false">Н</option>'
-                    )
-                }
+                $("#absent_absent").html(
+                    '<option value="true" selected>П</option><option value="false">Н</option><option value="false_true">Н.У</option>'
+                )
             }
+
+            if ( abs_reas.includes( parseInt(student_id) ) ) {
+                $("#absent_absent").html(
+                    '<option value="true">П</option><option value="false">Н</option><option value="false_true" selected>Н.У</option>'
+                )
+            }
+
         })
         .catch( function( err ) {
             console.log(err)
@@ -122,6 +143,7 @@ function sendAbsent( lesson_id, student_id, absent ) {
     })
     return promiseResult
 }
+
 
 function getAbsents( form ) {
 
