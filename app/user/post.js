@@ -233,32 +233,31 @@ function initPost( app ) {
 
         lesson_id = req.body.lesson_id
         student_id = req.body.student_id
-        console.log( student_id )
         absent = req.body.absent
-
-        Array.prototype.remove = function() {
-            var what, a = arguments, L = a.length, ax;
-            while (L && this.length) {
-                what = a[--L];
-                while ((ax = this.indexOf(what)) !== -1) {
-                    this.splice(ax, 1);
-                }
-            }
-            return this;
-        };
 
         database.findLesson( lesson_id ).then( function( lesson ) {
             absents = lesson.absents
             absents_reasonable = lesson.absents_reasonable
 
+            Array.prototype.remove = function() {
+                var what, a = arguments, L = a.length, ax;
+                while (L && this.length) {
+                    what = a[--L];
+                    while ((ax = this.indexOf(what)) !== -1) {
+                        this.splice(ax, 1);
+                    }
+                }
+                return this;
+            };
+
             if ( absents == null ) {
-                absents = {}
+                absents = []
             }
 
             if ( absents_reasonable == null ) {
-                absents_reasonable = {}
+                absents_reasonable = []
             }
-
+            
             if ( absent == 'false' ) {
                 absents.push( parseInt(student_id) )
                 absents_reasonable.remove( parseInt(student_id) )
@@ -273,7 +272,7 @@ function initPost( app ) {
                 absents.remove( parseInt(student_id) )
                 absents_reasonable.push( parseInt(student_id) )
             }
-            
+
             database.updateAbsents( lesson_id, absents ).then( function( result ) {
                 database.updateAbsentsReasonable( lesson_id, absents_reasonable ).then( function( reslut ) {
                     res.json( 'success' )

@@ -2,10 +2,6 @@ jQuery( function($) {
     $("#absent_group").change( function() {
 
         var data = $(".absent_form").serializeArray()
-
-        console.log( data )
-        console.log( data.find(serialize_group_id) )
-
         var group_id = data[0].value
         
 
