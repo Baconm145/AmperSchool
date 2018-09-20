@@ -228,11 +228,16 @@ jQuery( function($) {
                             success: function(  res ) {
 
                                 var content = 'Посещ:'
-                                if ( res[1] ) {
+                                console.log( res[1] )
+                                if ( res[1] == 'true' ) {
                                     content += ' не был<br>'
-                                } else {
+                                } 
+                                if ( res[1] == 'false' ) {
                                     content += ' был<br>'
                                 }
+                                if ( res[1] == 'true_false' ) {
+                                    content += ' не был (УВ)<br>'
+                                } 
                                 for ( var i = 0; i < res[0].length; i++ ) {
                                     content += res[0][i].info + ': ' + res[0][i].mark + '<br>'
                                 }

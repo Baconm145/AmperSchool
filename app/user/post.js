@@ -105,10 +105,15 @@ function initPost( app ) {
                 res.json( 'Нет информации' )
             } else {
                 database.findMarks( usr.id, lesson.id ).then( function( marks ) {
-                    var absent = false
+                    var absent = 'false'
                     if ( lesson.absents !=  null ) {
                         if ( lesson.absents.includes( usr.id ) ) {
-                            absent = true
+                            absent = 'true'
+                        }
+                    }
+                    if  ( lesson.absents_reasonable != null ) {                        
+                        if ( lesson.absents_reasonable.includes( usr.id ) ) {
+                            absent = 'true_false'
                         }
                     }
                     res.json( [marks, absent] )

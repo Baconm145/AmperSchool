@@ -195,7 +195,7 @@ body {
 	left: 206px;
 	top: 0px;
 	position: absolute;
-	width: 500px;
+	width: 700px;
 	height: 240px;
 	overflow-x: hidden;
 }
@@ -241,7 +241,7 @@ body {
 	left: 152px;
 	top: 0px;
 	position: absolute;
-	width: 440px;
+	width: 540px;
 	height: 240px;
 	font-family: proxima_nova_regular; 
 	font-size: 22.5pt;
@@ -249,7 +249,6 @@ body {
 	color: #3b4694;
 	box-sizing: border-box;
 	padding: 10px;
-	padding-left: 30px;
 	text-align: left;
 }
 #profile_timetable_title {
