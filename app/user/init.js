@@ -162,7 +162,6 @@ function renderStudentProfile( req, res ) {
 
   var timetable
   var months
-  var dates
 
   database.findGroup( usr.group_id ).then( function( group ) {
 
