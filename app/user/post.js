@@ -165,7 +165,13 @@ function initPost( app ) {
                     }
                 }
 
-                wb.write('report.xlsx')
+                wb.write('report.xlsx', function(err, stats) {
+                    if (err) {
+                      console.error(err);
+                    } else {
+                      console.log(stats); // Prints out an instance of a node.js fs.Stats object
+                    }
+                  })
 
                 res.json( 'file generated' )
             })            
@@ -182,7 +188,7 @@ function initPost( app ) {
 
         var filename = req.query.group + ' ' + req.query.month + '.xlsx'
 
-        res.download( pathStr, filename, function() {
+        res.download( pathStr, filename, function( err ) {
             fs.unlink( pathStr, (err) => {
                 if (err) throw err;
             })
