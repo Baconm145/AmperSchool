@@ -6,6 +6,9 @@ const bcrypt = require('bcrypt')
 const uuidv1 = require('uuid/v1')
 const jsonParser = bodyParser.json()
 const yandexCheckout = require('./payment')
+const xl = require('excel4node')
+const path = require('path')
+const fs = require('fs');
 
 function initPost( app ) {
 
@@ -89,6 +92,100 @@ function initPost( app ) {
         
         database.insertLesson( req.body.group_id, req.body.date ).then( function( respond ) {
             res.json( respond )
+        })
+    })
+
+    app.post('/formExcelData', jsonParser, function( req, res ) {
+
+        if(!req.body) return res.sendStatus(400)
+
+        if ( !req.isAuthenticated() ) { res.redirect('/') }
+
+        usr = req.user
+
+        month_excel = parseInt( req.body.month_excel.value ) + 1
+        month_group = req.body.group_id_excel.value
+
+        database.findLessonsByMonthAndGroup( month_excel, month_group ).then( function( lessons_result ) {
+
+            database.findUsersByGroupId( month_group ).then( function( group ) {
+                var lessons = lessons_result.rows
+                var wb = new xl.Workbook()
+                var ws = wb.addWorksheet('Посещаемость')
+
+                var cellStyle = wb.createStyle({
+                    alignment: {
+                      horizontal: 'right',
+                    },
+                  });
+
+                ws.cell(1, 1).string('ФИО/Дата')
+
+                ws.column(1).setWidth(30);
+
+                group.sort(function( o1, o2 ) {
+                    return o1.lastname.localeCompare(o2.lastname);
+                })
+
+                for ( var i = 0; i < group.length; i++ ) {
+                    ws.cell(i + 2, 1).string( group[i].lastname + ' ' + group[i].firstname )
+                }
+
+                lessons.sort(function( o1, o2 ){
+                    if ( o1.date < o2.date )    return -1;
+                    else if( o1.date > o2.date ) return  1;
+                    else                      return  0;
+                  });
+
+
+                for ( var i = 0; i < lessons.length; i++ ) {
+                    ws.cell( 1, i + 2 ).date( lessons[i].date )
+                }
+
+                function findIndexByID( element, index, array ) {
+                    if ( element.id == this ) {
+                        return true
+                    }
+                }
+                
+                for ( var i = 0; i < lessons.length; i++ ) {
+                    if ( lessons[i].absents == null ) {
+                        lessons[i].absents = []
+                    }
+                    if ( lessons[i].absents_reasonable == null ) {
+                        lessons[i].absents_reasonable = []
+                    }
+                    for ( var j = 0; j < lessons[i].absents.length; j++ ) {
+                        var position = group.findIndex( findIndexByID, lessons[i].absents[j] ) + 2
+                        ws.cell( position, i + 2 ).string('Н').style(cellStyle)
+                    }
+                    for ( var j = 0; j < lessons[i].absents_reasonable.length; j++ ) {
+                        var position = group.findIndex( findIndexByID, lessons[i].absents_reasonable[j] ) + 2
+                        ws.cell( position, i + 2 ).string('УП').style(cellStyle)
+                    }
+                }
+
+                wb.write('report.xlsx')
+
+                res.json( 'file generated' )
+            })            
+        })
+    })
+
+    app.get('/getExcelData', function( req, res ){
+
+        if ( !req.isAuthenticated() ) { res.redirect('/') }
+
+        res.type( 'document' )
+        
+        var pathStr = path.join( process.cwd(), 'report.xlsx' )
+
+        var filename = req.query.group + ' ' + req.query.month + '.xlsx'
+
+        res.download( pathStr, filename, function() {
+            fs.unlink( pathStr, (err) => {
+                if (err) throw err;
+            })
         })
     })
 

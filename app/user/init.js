@@ -151,7 +151,7 @@ function renderAdminProfile( req, res ) {
 function formOptions( groups ) {
   var result = ''
   for ( var i = 0; i < groups.length; i++ ) {
-    result += '<option value="' + groups[i].id + '">' +  groups[i].id + '. ' + groups[i].name + '</option>'
+    result += '<option value="' + groups[i].id + '">' + groups[i].name + '</option>'
   }
   return result
 }

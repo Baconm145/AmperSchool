@@ -8,6 +8,9 @@ var knex = require('knex')({
     findByName: function( username ) {  
       return knex.select().from('users').where('username', username).first()
     },
+    findUsersByGroupId: function( group_id ) {
+      return knex.select().from('users').where('group_id', group_id)
+    },
     findById: function( id ) {
       return knex.select().from('users').where('id', id).first()
     },
@@ -76,5 +79,9 @@ var knex = require('knex')({
     },
     deleteMark: function( mark_id ) {
       return knex('marks').where( 'id', mark_id ).del()
-    }   
+    },
+    findLessonsByMonthAndGroup: function( month, group_id ) {
+      var Qstring = 'select * from lessons where extract( month from date) = ' + month.toString() + ' and group_id = ' + group_id.toString()
+      return knex.raw( Qstring )
+    }
   };

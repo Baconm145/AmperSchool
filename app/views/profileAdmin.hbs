@@ -9,18 +9,23 @@
 		<script src="javascripts/profile.js"></script>
 		<script src="javascripts/teacher/add_lesson.js"></script>
 		<script src="javascripts/teacher/add_mark.js"></script>
+		<script src="javascripts/teacher/download.js"></script>
 		<script src="javascripts/teacher/change_mark.js"></script>
 		<script src="javascripts/teacher/absent.js"></script>
 		<script src="javascripts/teacher/homework.js"></script>
 		<script src="javascripts/admin/add_group.js"></script>
 		<script src="javascripts/admin/change_group.js"></script>
 		<script src="javascripts/admin/add_user.js"></script>
+		<script src="javascripts/admin/excel_export.js"></script>
+		<script src="javascripts/admin/xlsx.full.min.js"></script>
 		<link href="stylesheets/profile_general_style.css" rel="stylesheet" type="text/css">
 		<link href="stylesheets/profile_teacher_style.css" rel="stylesheet" type="text/css">
 		<link href="stylesheets/profile_admin_style.css" rel="stylesheet" type="text/css">
 		<link href="stylesheets/start_style.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
+		<iframe id="my_iframe" style="display:none;"></iframe>
+		
 		<div id="background">
 			<div id="start_topbox">
 				<div id="start_logo"><img src="images/logo.png"></div>
@@ -125,7 +130,7 @@
                         {{{options}}}
 					</select>
 
-					<input type="text" name="homework_homework" id="homework_homework" placeholder="Задание">
+					<textarea name="homework_homework" id="homework_homework" placeholder="Задание"></textarea>
 
 				</form>
 
@@ -177,6 +182,32 @@
 
 				</form>
 
+				<form action="#" name="excel_form" class="excel_form">
+
+					<input type="submit" id="excel_button" value="Скачать таблицу">	
+
+					<select name="excel_group" id="excel_group">
+                        <option value="" selected disabled hidden>Группа</option>
+                        {{{options}}}
+                    </select>
+
+					<select name="excel_month" id="excel_month">
+						<option value="" selected disabled hidden>Месяц</option>
+						<option value="8">Сентябрь</option>
+						<option value="9">Октябрь</option>
+						<option value="10">Ноябрь</option>
+						<option value="11">Декабрь</option>
+						<option value="0">Январь</option>
+						<option value="1">Февраль</option>
+						<option value="2">Март</option>
+						<option value="3">Апрель</option>
+						<option value="4">Май</option>
+						<option value="5">Июнь</option>
+						<option value="6">Июль</option>
+						<option value="7">Август</option>
+					</select>	
+					
+				</form>
 			</div>
 		</div>
  	</body>
