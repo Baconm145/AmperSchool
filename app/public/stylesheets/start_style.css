@@ -17,7 +17,7 @@
 
 #start_logo {
 	left: 235px;
-	top: 5px;
+	top: 10px;
 	position: fixed;
 	width: 163px;
 	height: 39px;
@@ -43,7 +43,9 @@
 	height: 60px;
 	z-index: 15;	
 	background: rgb(232, 232, 232);
-    box-shadow: 5px 5px 10px rgba(100,100,100,0.5);
+	box-shadow: 5px 5px 10px rgba(100,100,100,0.5);
+	background-size: cover;
+	background-attachment: fixed;
 }
 
 #start_enter { 
@@ -238,10 +240,10 @@
 	top: 12px; 
 	position: fixed; 
 	width: 1280px;
-	height: 26px;
+	height: 45px;
 	z-index:7;	 
 	font-family: proxima_nova_regular; 
-	font-size: 18.5pt;
+	font-size: 15.5pt;
 	color: #3b4694;
 	text-align: center;
 }
