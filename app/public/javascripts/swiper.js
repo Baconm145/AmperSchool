@@ -11,6 +11,12 @@ disc = [
     'Набрал на ЕГЭ по физике <b>85 баллов</b>.<br><br>Поступил в Санкт-Петербургский <b>Горный университет</b>',
     'Набрал на ЕГЭ по физике <b>80 баллов</b>.<br><br>Поступил в Санкт-Петербургский <b>Политехнический университет</b>'
 ]
+vks = [
+    'https://vk.com/zaxar_loginov',
+    'https://vk.com/id78732695',
+    'https://vk.com/ilyagur',
+    'https://vk.com/id94454118'
+]
 jQuery( function($) {
     $("#results_swiper_right").click( function() {   
         if ( $("#results_box").queue("fx").length == 0 ) {
@@ -30,6 +36,7 @@ jQuery( function($) {
             $( "#results_box" ).queue(function () {                
                 $( '#results_photo' ).attr( 'src','images/photo_results_'+ current.toString() +'.png' )
                 $( '#results_content' ).html( disc[current] )
+                $( '#results_student_vk' ).attr( 'href', vks[current] )
                 $( '#results_student_name' ).html( names[current] )
                 $(this)
                     .fadeIn ( { queue: false }, 1000 )
@@ -56,6 +63,7 @@ jQuery( function($) {
             $( "#results_box" ).queue(function () {
                 $( '#results_photo' ).attr( 'src','images/photo_results_'+ current.toString() +'.png' )
                 $( '#results_content' ).html( disc[current] )
+                $( '#results_student_vk' ).attr( 'href', vks[current] )
                 $( '#results_student_name' ).html( names[current] )      
                 $(this)
                     .fadeIn ( { queue: false }, 1000 )

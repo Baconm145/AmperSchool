@@ -107,6 +107,7 @@ function renderMainAuthorizedUkhta( req, res ) {
   res.render( 'home', {
     layout: false,
     unauthorized: false,
+    ukhta: true,
     name: nameString,
     price_3: '2500',
     price_2: '5000',
@@ -121,6 +122,7 @@ function renderMainUnAuthorizedUkhta( req, res ) {
   res.render( 'home', {
     layout: false,
     unauthorized: true,
+    ukhta: true,
     price_3: '2500',
     price_2: '5000',
     price_1: '6500',
@@ -137,6 +139,7 @@ function renderMainAuthorized( req, res ) {
     layout: false,
     unauthorized: false,
     name: nameString,
+    ukhta: false,
     price_3: '4000',
     price_2: '7000',
     price_1: '9000',
@@ -150,6 +153,7 @@ function renderMainUnAuthorized( req, res ) {
   res.render( 'home', {
     layout: false,
     unauthorized: true,
+    ukhta: false,
     price_3: '4000',
     price_2: '7000',
     price_1: '9000',

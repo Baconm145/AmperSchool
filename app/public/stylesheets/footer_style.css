@@ -36,7 +36,7 @@
 	font-size: 22pt;
 	color: #3b4694;
 	text-align: left;
-} 
+}
 
  #footer_address_2 { 
 	left: 700px; 
@@ -50,3 +50,16 @@
 	color: #3b4694;
 	text-align: left;
 }
+
+#footer_address_3 { 
+	left: 463px; 
+	top: 5334px; 
+	position: absolute; 
+	width: 346px;
+	height: 96px;
+	z-index:1; 
+	font-family: proxima_nova_black; 
+	font-size: 22pt;
+	color: #3b4694;
+	text-align: left;
+} 

@@ -25,11 +25,24 @@
 	color: #3b4694;
 }
 
+#results_subheader {
+	left: 250px; 
+	top: 2275px;
+	position: absolute; 
+	width: 850px;
+	height: 24px;
+	z-index:1;	
+	font-family: proxima_nova_regular; 
+	font-size: 23pt;
+	text-align: center; 
+	color: #3b4694;
+}
+
 #results_bottom { 
 	left: 461px; 
 	top: 2808px; 
 	position: absolute; 
-	width: 352px;
+	width: 382px;
 	height: 23px;
 	z-index:1;
     font-family: proxima_nova_bold; 
@@ -77,6 +90,19 @@
 #results_student_name { 
 	left: 0; 
 	top: 310px; 
+	position: absolute; 
+	width: 260px;
+	height: 22px;
+	z-index:2;	
+	font-family: proxima_nova_regular; 
+	font-size: 20pt;
+	text-align: center; 
+	color: #3b4694;
+}
+
+#results_student_vk { 
+	left: 0; 
+	top: 345px; 
 	position: absolute; 
 	width: 260px;
 	height: 22px;
