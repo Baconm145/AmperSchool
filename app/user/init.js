@@ -109,8 +109,8 @@ function renderMainAuthorizedUkhta( req, res ) {
     unauthorized: false,
     name: nameString,
     price_1: '2500',
-    price_1: '5000',
-    price_1: '6500',
+    price_2: '5000',
+    price_3: '6500',
     title: 'Школа физики в Ухте +7 (904) 108-16-25',
     offer: 'ПОДГОТОВИМ К ЕГЭ И ОГЭ ПО ФИЗИКЕ ЗА 7 МЕС. В УХТЕ ИЛИ ВЕРНЕМ ДЕНЬГИ',
     suboffer: 'По уникальной методике от 625 руб/занятие'
@@ -122,8 +122,8 @@ function renderMainUnAuthorizedUkhta( req, res ) {
     layout: false,
     unauthorized: true,
     price_1: '2500',
-    price_1: '5000',
-    price_1: '6500',
+    price_2: '5000',
+    price_3: '6500',
     title: 'Школа физики в Ухте +7 (904) 108-16-25',
     offer: 'ПОДГОТОВИМ К ЕГЭ И ОГЭ ПО ФИЗИКЕ ЗА 7 МЕС. В УХТЕ ИЛИ ВЕРНЕМ ДЕНЬГИ',
     suboffer: 'По уникальной методике от 625 руб/занятие'
@@ -138,8 +138,8 @@ function renderMainAuthorized( req, res ) {
     unauthorized: false,
     name: nameString,
     price_1: '4000',
-    price_1: '7000',
-    price_1: '9000',
+    price_2: '7000',
+    price_3: '9000',
     title: 'Школа физики в СПб +7 (904) 108-16-25',
     offer: 'ПОДГОТОВИМ К ЕГЭ И ОГЭ ПО ФИЗИКЕ ЗА 7 МЕС. В СПб ИЛИ ВЕРНЕМ ДЕНЬГИ',
     suboffer: 'По уникальной методике от 750 руб/занятие'
@@ -151,8 +151,8 @@ function renderMainUnAuthorized( req, res ) {
     layout: false,
     unauthorized: true,
     price_1: '4000',
-    price_1: '7000',
-    price_1: '9000',
+    price_2: '7000',
+    price_3: '9000',
     title: 'Школа физики в СПб +7 (904) 108-16-25',
     offer: 'ПОДГОТОВИМ К ЕГЭ И ОГЭ ПО ФИЗИКЕ ЗА 7 МЕС. В СПб ИЛИ ВЕРНЕМ ДЕНЬГИ',
     suboffer: 'По уникальной методике от 750 руб/занятие'
