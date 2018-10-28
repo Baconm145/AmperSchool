@@ -24,7 +24,11 @@
 			<!--Start graphics-->
 			<div id="start_topbox">
 				<div id="start_logo"><img src="images/logo.png" height="39" width="163"></div>
-				<div id="start_name">Школа физики в СПб +7 (904) 108-16-25</div>
+				{{#if ukhra}}
+					<div id="start_name">Школа физики в Ухте +7 (904) 108-16-25</div>
+				{{else}}
+					<div id="start_name">Школа физики в СПб +7 (904) 108-16-25</div>
+				{{/if}}
 				
 				{{#if unauthorized}}
 				{{#if fail}}
