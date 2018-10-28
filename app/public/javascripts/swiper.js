@@ -79,4 +79,7 @@ jQuery( function($) {
     $("#pricelist_rectangle_rounded_3").click(function() {
         $("#application_rectangle_rounded_1").get(0).scrollIntoView( { behavior: 'smooth' } );
     });
+    $("#start_rectangle_rounded").click(function() {
+        $("#application_rectangle_rounded_1").get(0).scrollIntoView( { behavior: 'smooth' } );
+    });
 });

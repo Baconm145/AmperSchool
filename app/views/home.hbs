@@ -23,7 +23,7 @@
 		<div id="background">
 			<!--Start graphics-->
 			<div id="start_topbox">
-				<div id="start_logo"><img src="images/logo.png"></div>
+				<div id="start_logo"><img src="images/logo.png" height="49" width="163"></div>
 				<div id="start_name">Школа физики в СПб</div>
 				
 				{{#if unauthorized}}
@@ -64,61 +64,62 @@
 			<!--Start content-->
 
 
-			<div id="start_greeting">ПРИВЕТ, ЭТО ШКОЛА ФИЗИКИ "АМПЕР"</div>
-			<div id="start_subgreeting">Мы подготовим вас к экзаменам по физике или просто поможем подтянуть знания</div>
+			<div id="start_greeting">{{offer}}</div>
+			<div id="start_subgreeting">{{suboffer}}</div>
+			<div id="start_rectangle_rounded">ЗАПИСАТЬСЯ</div>
 
 			<!--Specs graphics-->
 
-				<dev id="specs_photo_1"><img src ="images/photo_4.png"></dev>
-				<dev id="specs_photo_2"><img src="images/photo_5.png"></dev>
-				<dev id="specs_photo_3"><img src="images/photo_6.png"></dev>
-				<dev id="specs_photo_4"><img src="images/photo_7.png"></dev>
-				<dev id="specs_photo_5"><img src="images/photo_8.png"></dev>
-				<dev id="specs_rectangle_1"></dev>
-				<dev id="specs_rectangle_2"></dev>
-				<dev id="specs_rectangle_3"></dev>
-				<dev id="specs_rectangle_4"></dev>
-				<dev id="specs_line_1"><img src="images/line_1.png"></dev>
-				<dev id="specs_line_2"><img src="images/line_2.png"></dev>
-				<dev id="specs_line_3"><img src="images/line_3.png"></dev>
+				<div id="specs_photo_1"><img src ="images/photo_4.png"></div>
+				<div id="specs_photo_2"><img src="images/photo_5.png"></div>
+				<div id="specs_photo_3"><img src="images/photo_6.png"></div>
+				<div id="specs_photo_4"><img src="images/photo_7.png"></div>
+				<div id="specs_photo_5"><img src="images/photo_8.png"></div>
+				<div id="specs_rectangle_1"></div>
+				<div id="specs_rectangle_2"></div>
+				<div id="specs_rectangle_3"></div>
+				<div id="specs_rectangle_4"></div>
+				<div id="specs_line_1"><img src="images/line_1.png"></div>
+				<div id="specs_line_2"><img src="images/line_2.png"></div>
+				<div id="specs_line_3"><img src="images/line_3.png"></div>
 
 			<!--Specs content-->
 
-				<dev id="specs_header">
+				<div id="specs_header">
 					НАША ШКОЛА СПЕЦИАЛИЗИРУЕТСЯ <br>
 					ТОЛЬКО НА <span class="black_red">ФИЗИКЕ</span> И <br>
 					МЫ ЗНАЕМ О ПОДГОТОВКЕ К ЭКЗАМЕНАМ ВСЕ!
-				</dev>
-				<dev id="specs_subheader">В ЧЕМ НАШЕ <span class="black_red">ОТЛИЧИЕ</span>?</dev>
-				<dev id="specs_article_1">
+				</div>
+				<div id="specs_subheader">В ЧЕМ НАШЕ <span class="black_red">ОТЛИЧИЕ</span>?</div>
+				<div id="specs_article_1">
 					В процессе обучения мы <span class="bold">бесплатно</span> выдаем<br>
 					свои методические пособия, задачники и<br>
 					полезные таблицы, которые могут стать<br>
 					<span class="bold">хорошим подспорьем</span> в изучении этой<br>
 					непростой науки
-				</dev>
-				<dev id="specs_article_2">
+				</div>
+				<div id="specs_article_2">
 					Вы <span class="bold">получаете доступ</span> к разработанной<br>
 					нами системе тестирования:<br>
 					она позволит <span class="bold">лучше закрепить знания</span>
-				</dev>
-				<dev id="specs_article_3">
+				</div>
+				<div id="specs_article_3">
 					Вы также получаете доступ к вашему<br>
 					<span class="bold">личному кабинету</span>, в котором вы<br>
 					сможете отслеживать свой прогресс
-				</dev>
-				<dev id="specs_article_4">
+				</div>
+				<div id="specs_article_4">
 					После каждого раздела мы проводим <span class="bold">контрольные<br
 					работы><span> и устные экзамены по теории <span class="bold">индивидуально<br>
 					с каждым учеником</span>, а после каждой новой темы мы<br>
 					проводим небольшие самостоятельные работы, кото-<br>
 					ры позволяют <span class="bold">выявить слабые места</span>
-				</dev>
-				<dev id="specs_article_5">
+				</div>
+				<div id="specs_article_5">
 					Мы не распыляемся на <span class="bold">множество предметов.</span><br>
 					Так нам проще сконцентрироваться на каждом<br>
 					ученике и найти к <span class="bold">каждому свой подход</span>
-				</dev>
+				</div>
 				
 			<!--Results graphics-->
 
@@ -161,10 +162,10 @@
 
 			<!--Application content-->
 
-				<dev id="application_header">ПЕРВОЕ ЗАНЯТИЕ<br>
+				<div id="application_header">ПЕРВОЕ ЗАНЯТИЕ<br>
 					БЕСПЛАТНО!
-				</dev>
-				<dev id="application_subheader">С нами ты сдашь экзамены на ИЗИ!</dev>
+				</div>
+				<div id="application_subheader">С нами ты сдашь экзамены на ИЗИ!</div>
 
 			<!--Social networks graphics-->
 				
@@ -212,7 +213,7 @@
 				<div id="pricelist_1_lessons">12 занятий в месяц <br>
 					3 раза в неделю
 				</div>
-				<div id="pricelist_1_price">9000 руб. <br>
+				<div id="pricelist_1_price">{{price_1}} руб. <br>
 					<span class="regular_red">в месяц</span>
 				</div>
 
@@ -221,7 +222,7 @@
 				<div id="pricelist_2_lessons">8 занятий в месяц <br>
 					2 раза в неделю
 				</div>
-				<div id="pricelist_2_price">7000 руб. <br>
+				<div id="pricelist_2_price">{{price_2}} руб. <br>
 					<span class="regular_red">в месяц</span>
 				</div>
 
@@ -230,7 +231,7 @@
 				<div id="pricelist_3_lessons">4 занятия в месяц <br>
 					1 раза в неделю
 				</div>
-				<div id="pricelist_3_price">4000 руб. <br>
+				<div id="pricelist_3_price">{{price_3}} руб. <br>
 					<span class="regular_red">в месяц</span>
 				</div>
 			
