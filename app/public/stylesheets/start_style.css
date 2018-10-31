@@ -211,15 +211,15 @@
 	}
 #start_rectangle_rounded { 
 	left: 204px; 
-	top: 555px; 
+	top: 505px; 
 	position: absolute; 
-	width: 242px;
-	height: 45px;
+	width: 262px;
+	height: 40px;
 	z-index:3;
 	background: #3b4694;
 	border-radius: 10px;
-	font-family: proxima_nova_black; 
-	font-size: 19.5pt;
+	font-family: proxima_nova_regular; 
+	font-size: 17.5pt;
 	color: #ffffff;
 	text-align: center;
 	box-sizing: border-box;
@@ -275,24 +275,65 @@
 	text-align: center;
 } 
 
+#application_thanks {
+	left: 240px; 
+	top: 250px; 
+	position: absolute; 
+	width: 800px;
+	height: 87px;
+	z-index:5;
+	font-family: proxima_nova_bold; 
+	font-size: 35pt;
+	color: #3b4694;
+	text-align: center;
+}
+
+#application_rectangle_rounded { 
+	left: 520px; 
+	top: 430px; 
+	position: absolute; 
+	width: 242px;
+	height: 45px;
+	z-index:3;
+	background: #3b4694;
+	border-radius: 10px;
+	font-family: proxima_nova_regular; 
+	font-size: 19.5pt;
+	color: #ffffff;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 7px;
+	cursor: pointer;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;	 
+} 
+
 #start_greeting { 
 	left: 204px; 
 	top: 332px; 
 	position: absolute; 
-	width: 555px;
+	width: 575px;
 	height: 87px;
 	z-index:5;
-	font-family: proxima_nova_bold; 
+	font-family: proxima_nova_bold;
+	line-height: 1;
 	font-size: 30pt;
 	color: #3b4694;
 	text-align: left;
 }
 #start_subgreeting { 
 	left: 204px; 
-	top: 475px; 
+	top: 425px; 
 	position: absolute; 
-	width: 575px;
+	width: 595px;
 	height: 91px;
+	font-weight: 100;
+	line-height: 1;
 	z-index:6;
 	font-family: proxima_nova_regular; 
 	font-size: 21.5pt;

@@ -1,6 +1,47 @@
 <!DOCTYPE html>
 <html>
 	<head>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128340877-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-128340877-1');
+		</script>
+
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+			(function (d, w, c) {
+				(w[c] = w[c] || []).push(function() {
+					try {
+						w.yaCounter50912321 = new Ya.Metrika2({
+							id:50912321,
+							clickmap:true,
+							trackLinks:true,
+							accurateTrackBounce:true,
+							webvisor:true
+						});
+					} catch(e) { }
+				});
+
+				var n = d.getElementsByTagName("script")[0],
+					s = d.createElement("script"),
+					f = function () { n.parentNode.insertBefore(s, n); };
+				s.type = "text/javascript";
+				s.async = true;
+				s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+				if (w.opera == "[object Opera]") {
+					d.addEventListener("DOMContentLoaded", f, false);
+				} else { f(); }
+			})(document, window, "yandex_metrika_callbacks2");
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/50912321" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+		<!-- /Yandex.Metrika counter -->
 		<meta name="viewport" content="text/html, charset=UTF-8" />
 		<title>AmperSchool</title>
 		<script src="javascripts/jquery.min.js"></script>
@@ -24,7 +65,7 @@
 			<!--Start graphics-->
 			<div id="start_topbox">
 				<div id="start_logo"><img src="images/logo.png" height="39" width="163"></div>
-				{{#if ukhra}}
+				{{#if ukhta}}
 					<div id="start_name">Школа физики в Ухте +7 (904) 108-16-25</div>
 				{{else}}
 					<div id="start_name">Школа физики в СПб +7 (904) 108-16-25</div>
@@ -70,7 +111,7 @@
 
 			<div id="start_greeting">{{offer}}</div>
 			<div id="start_subgreeting">{{suboffer}}</div>
-			<div id="start_rectangle_rounded">ЗАПИСАТЬСЯ</div>
+			<div id="start_rectangle_rounded">ПРОБНОЕ ЗАНЯТИЕ</div>
 
 			<!--Specs graphics-->
 
@@ -158,12 +199,20 @@
 				<div id="application_photo_1"><img src="images/photo_1.png"></div>
 				<div id="application_photo_2"><img src="images/photo_2.png"></div>
 				<div id="application_photo_3"><img src="images/photo_3.png"></div>
-				<form action="/mail" method="post">
+
+				{{#if ukhta}}
+					<form action="/mailUkhta" method="post">
 					<input type="text" id="application_rectangle_rounded_1" name="name" placeholder="ИМЯ И ФАМИЛИЯ"></input>
 					<input type="text" id="application_rectangle_rounded_2" name="phone" placeholder="ТЕЛЕФОН"></input>
 					<input type="submit" id="application_rectangle_rounded_4" value="ОТПРАВИТЬ"></input>
 				</form>
-				
+				{{else}}
+					<form action="/mailSPb" method="post">
+					<input type="text" id="application_rectangle_rounded_1" name="name" placeholder="ИМЯ И ФАМИЛИЯ"></input>
+					<input type="text" id="application_rectangle_rounded_2" name="phone" placeholder="ТЕЛЕФОН"></input>
+					<input type="submit" id="application_rectangle_rounded_4" value="ОТПРАВИТЬ"></input>
+				</form>
+				{{/if}}				
 
 			<!--Application content-->
 

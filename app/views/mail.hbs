@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<meta name="viewport" content="text/html, charset=UTF-8" />
+		<title>Личный кабинет</title>
+		<script src="javascripts/jquery.min.js"></script>
+		<script src="javascripts/resize.js"></script>		
+		<script src="javascripts/jquery.animate-colors-min.js"></script>
+		<script src="javascripts/profile.js"></script>		
+		<link href="stylesheets/profile_general_style.css" rel="stylesheet" type="text/css">
+		<link href="stylesheets/start_style.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div id="background">			
+			<div id="background">
+				<img src="images/background.png">
+				<div id="application_thanks">Спасибо, что выбрали нас! Скоро с вами свяжутся</div>
+				{{#if ukhta}}
+				<form action="/ukhta" method="GET">
+					<input type="submit" id="application_rectangle_rounded" value="НА ГЛАВНУЮ"></input>
+				</form>
+				{{else}}
+				<form action="/" method="GET">
+					<input type="submit" id="application_rectangle_rounded" value="НА ГЛАВНУЮ"></input>
+				</form>
+				{{/if}}
+			</div>
+		</div>
+ 	</body>
+ </html>

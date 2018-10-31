@@ -65,7 +65,7 @@ function initUser (app) {
     res.redirect('/')      
   } )
 
-  app.post('/mail', function( req, res ) {
+  app.post('/mailSPb', function( req, res ) {
 
     var transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -85,20 +85,54 @@ function initUser (app) {
       text: string
     }
 
+    
     transporter.sendMail(mailOptions, function(error, info){
       if (error) {
         console.log(error);
       } else {
-        res.render( 'home', {
-          layout: false,
-          unauthorized: true,
-          success: true
-        })
         console.log('Email sent: ' + info.response);
       }
     })
-
+    
+    res.render( 'mail', {
+      layout: false,
+      ukhta: false
+    })
   })
+
+  app.post('/mailUkhta', function( req, res ) {
+
+    var transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'amperSchool@gmail.com',
+        pass: 'dd499c3ce7'
+      }
+    })
+
+    var string = ''
+    string += 'Поступила новая заявка!\nФ.И.О: ' + req.body.name + '\nТелефон: ' + req.body.phone + '\nКласс ' + req.body.class
+
+    var mailOptions = {
+      from: 'amperSchool@gmail.com',
+      to: 'amper.fiz@yandex.ru',
+      subject: 'Новая заявка!',
+      text: string
+    }
+    
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    })
+    
+    res.render( 'mail', {
+      layout: false,
+      ukhta: true
+    })
+  })  
 }
 
 function renderMainAuthorizedUkhta( req, res ) {
@@ -113,8 +147,8 @@ function renderMainAuthorizedUkhta( req, res ) {
     price_2: '5000',
     price_1: '6500',
     title: 'Школа физики в Ухте +7 (904) 108-16-25',
-    offer: 'ПОДГОТОВИМ К ЕГЭ И ОГЭ ПО ФИЗИКЕ ЗА 7 МЕС. В УХТЕ ИЛИ ВЕРНЕМ ДЕНЬГИ',
-    suboffer: 'По уникальной методике от 625 руб/занятие'
+    offer: 'ПОДГОТОВИМ К ЕГЭ И ОГЭ ПО ФИЗИКЕ ЗА 7 МЕС. В УХТЕ',
+    suboffer: 'Или вернем деньги! Занятия по уникальной методике от 312 руб. за час'
   } )
 }
 
@@ -127,8 +161,8 @@ function renderMainUnAuthorizedUkhta( req, res ) {
     price_2: '5000',
     price_1: '6500',
     title: 'Школа физики в Ухте +7 (904) 108-16-25',
-    offer: 'ПОДГОТОВИМ К ЕГЭ И ОГЭ ПО ФИЗИКЕ ЗА 7 МЕС. В УХТЕ ИЛИ ВЕРНЕМ ДЕНЬГИ',
-    suboffer: 'По уникальной методике от 625 руб/занятие'
+    offer: 'ПОДГОТОВИМ К ЕГЭ И ОГЭ ПО ФИЗИКЕ ЗА 7 МЕС. В УХТЕ',
+    suboffer: 'Или вернем деньги! Занятия по уникальной методике от 312 руб. за час'
   } )
 }
   
@@ -144,8 +178,8 @@ function renderMainAuthorized( req, res ) {
     price_2: '7000',
     price_1: '9000',
     title: 'Школа физики в СПб +7 (904) 108-16-25',
-    offer: 'ПОДГОТОВИМ К ЕГЭ И ОГЭ ПО ФИЗИКЕ ЗА 7 МЕС. В СПб ИЛИ ВЕРНЕМ ДЕНЬГИ',
-    suboffer: 'По уникальной методике от 750 руб/занятие'
+    offer: 'ПОДГОТОВИМ К ЕГЭ И ОГЭ ПО ФИЗИКЕ ЗА 7 МЕС. В СПБ',
+    suboffer: 'Или вернем деньги! Занятия по уникальной методике от 375 руб. за час'
   } )
 }
 
@@ -158,8 +192,8 @@ function renderMainUnAuthorized( req, res ) {
     price_2: '7000',
     price_1: '9000',
     title: 'Школа физики в СПб +7 (904) 108-16-25',
-    offer: 'ПОДГОТОВИМ К ЕГЭ И ОГЭ ПО ФИЗИКЕ ЗА 7 МЕС. В СПб ИЛИ ВЕРНЕМ ДЕНЬГИ',
-    suboffer: 'По уникальной методике от 750 руб/занятие'
+    offer: 'ПОДГОТОВИМ К ЕГЭ И ОГЭ ПО ФИЗИКЕ ЗА 7 МЕС. В СПБ',
+    suboffer: 'Или вернем деньги! Занятия по уникальной методике от 375 руб. за час'
   } )
 }
 
