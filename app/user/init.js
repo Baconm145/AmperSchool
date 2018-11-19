@@ -13,8 +13,17 @@ function initUser (app) {
     } else {
       renderMainUnAuthorizedUkhta( req, res )
     }
-  } )
+  })
 
+  app.get('/repetitor', ( req, res) => {
+    if ( req.isAuthenticated() ) {
+      renderMainAuthorizedRep( req, res )
+    } else {
+      renderMainUnAuthorizedRep( req, res )
+    }
+  })
+
+  renderMainAuthorizedRep
   app.get('/', ( req, res) => {
     if ( req.isAuthenticated() ) {
       renderMainAuthorized( req, res )
@@ -133,6 +142,37 @@ function initUser (app) {
       ukhta: true
     })
   })  
+}
+
+function renderMainAuthorizedRep( req, res ) {
+  var usr = req.user
+  var nameString = usr.firstname.charAt(0) + '. ' + usr.lastname;
+  res.render( 'home', {
+    layout: false,
+    unauthorized: false,
+    ukhta: true,
+    name: nameString,
+    price_3: '2500',
+    price_2: '5000',
+    price_1: '6500',
+    title: 'Школа физики в СПБ +7 (904) 108-16-25',
+    offer: 'РЕПЕТИТОРЫ ПО ФИЗИКЕ В СПБ ОТ 375 РУБ./ЧАС',
+    suboffer: 'Занятия по уникальной методике с гарантией результата - попробуйте бесплатно'
+  } )
+}
+
+function renderMainUnAuthorizedRep( req, res ) {
+  res.render( 'home', {
+    layout: false,
+    unauthorized: true,
+    ukhta: true,
+    price_3: '2500',
+    price_2: '5000',
+    price_1: '6500',
+    title: 'Школа физики в Ухте +7 (904) 108-16-25',
+    offer: 'РЕПЕТИТОРЫ ПО ФИЗИКЕ В СПБ ОТ 375 РУБ./ЧАС',
+    suboffer: 'Занятия по уникальной методике с гарантией результата - попробуйте бесплатно'
+  } )
 }
 
 function renderMainAuthorizedUkhta( req, res ) {
