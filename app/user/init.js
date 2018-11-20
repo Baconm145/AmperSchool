@@ -150,7 +150,7 @@ function renderMainAuthorizedRep( req, res ) {
   res.render( 'home', {
     layout: false,
     unauthorized: false,
-    ukhta: true,
+    ukhta: false,
     name: nameString,
     price_3: '2500',
     price_2: '5000',
@@ -165,7 +165,7 @@ function renderMainUnAuthorizedRep( req, res ) {
   res.render( 'home', {
     layout: false,
     unauthorized: true,
-    ukhta: true,
+    ukhta: false,
     price_3: '2500',
     price_2: '5000',
     price_1: '6500',
